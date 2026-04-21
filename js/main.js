@@ -60,12 +60,6 @@ contactForm.addEventListener('submit', function(e) {
   alert('Thank you, ' + fname + '! Your message has been sent.');
   contactForm.reset();
 });
-
-
-Ctrl+S
-//ፈትሽ — Form fill አድርግ → Submit → Message ይታያል ✅
-
-// ===== COPYRIGHT YEAR =====
 const copyright = document.getElementById('copyright');
 const year = new Date().getFullYear();
 copyright.innerHTML = 

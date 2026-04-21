@@ -135,12 +135,12 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo {
+.nav-log {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.logo-cross {
+.log-cross {
   width: 38px;
   height: 38px;
   background: var(--gold);
@@ -152,7 +152,7 @@ img {
   color: var(--dark);
   font-weight: 700;
 }
-.logo-text {
+.log-text {
   font-size: 16px;
   font-weight: 700;
   color: #fff;
