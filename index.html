@@ -9,23 +9,50 @@
 </head>
 
 <body>
-   <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
+   
+    <!-- ===== NAVBAR ===== -->
 
-            <div class="nav-logo">
-                <span class="logo-cross">+</span>
-                <span class="logo-text">Deber Genete St, Mary </span>
-            </div>
+<nav class="navbar">
+  <div class="nav-container">
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#sermons">Sermons</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#give">Give</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <div class="nav-logo">
+      <img src="images/cross.jpg"
+           alt="Logo"
+           style="width:36px;height:36px;
+                  border-radius:50%;
+                  object-fit:cover">
+      <div>
+        <div class="logo-text">
+          Deber Genete St, Mary
+        </div>
+        <div class="logo-subtitle">
+          Orthodox Tewahedo Church
+        </div>
+      </div>
+    </div>
+
+           <!-- Language Toggle -->
+
+<div class="lang-toggle">
+  <button class="lang-btn active" 
+          id="btn-en"
+          onclick="setLang('en')">
+    🇺🇸 EN
+  </button>
+  <button class="lang-btn" 
+          id="btn-am"
+          onclick="setLang('am')">
+    🇪🇹 አማ
+  </button>
+</div>
+           <ul class="nav-links">
+                <li><a href="#home" id="nav-home">Home</a></li>
+<li><a href="#about" id="nav-about">About</a></li>
+<li><a href="#services" id="nav-services">Services</a></li>
+<li><a href="#sermons" id="nav-sermons">Sermons</a></li>
+<li><a href="#events" id="nav-events">Events</a></li>
+<li><a href="#give" id="nav-give">Give</a></li>
+<li><a href="#contact" id="nav-contact">Contact</a></li>
             </ul>
 
             <button class="hamburger" id="hamburger">
@@ -40,17 +67,18 @@
     <!-- HERO -->
      <section class="hero" id="home">
         <div class="hero-content">
-            <p class="House of Faith"></p>
+            <p class="hero-tag" id="txt-tag">House of Faith</p> 
             <h1>Welcome to <br>
-            <span class="gold-text">Deber Genete St, Mary Orthodox Tewahedo  Church</span>
+            <span class="gold-text" id="txt-title">Deber Genete St, Mary Orthodox Tewahedo  church               
+            </span>
             </h1>
-            <p class="hero-desc">
+            <p class="hero-desc" id="text-desc">
                 A gathering place of faith, worship, and fellowship.
                 All are welcome - come as you are.
             </p>
             <div class="hero-buttons">
-                <a href="#services" class="btn btn-gold">Our Services</a>
-                <a href="#contact" class="btn btn-outline">Plan a visit</a>
+                <a href="#services" class="btn btn-gold" id="txt-btn1">Our Services</a>
+                <a href="#contact" class="btn btn-outline" id="txt-btn2">Plan a visit</a>
             </div>
         </div>
      </section>
@@ -89,7 +117,7 @@
       </section>
 
       <!-- SERVICES -->
-       <section class="Services" id="Services">
+       <section class="services" id="services">
         <div class="container">
             <span class="section-tag">What We Offer</span>
             <h2 class="section-title">Our Sacred Services</h2>
@@ -143,8 +171,80 @@
         </div>
        </section>
 
+       <!-- ===== SERMONS ===== -->
+<section class="sermons" id="sermons">
+  <div class="container">
+    <span class="section-tag">Listen & Learn</span>
+    <h2 class="section-title">Recent Sermons</h2>
+    <div class="gold-line"></div>
+
+    <div class="sermon-filters">
+      <button class="filter-btn active" 
+              onclick="filterSermon('all', this)">
+        All
+      </button>
+      <button class="filter-btn" 
+              onclick="filterSermon('faith', this)">
+        Faith
+      </button>
+      <button class="filter-btn" 
+              onclick="filterSermon('prayer', this)">
+        Prayer
+      </button>
+      <button class="filter-btn" 
+              onclick="filterSermon('family', this)">
+        Family
+      </button>
+    </div>
+
+    <div class="sermon-list">
+
+      <div class="sermon-card" data-cat="faith">
+        <div class="sermon-thumb">▶</div>
+        <div class="sermon-info">
+          <h3>Walking by Faith, Not by Sight</h3>
+          <p>A message on trusting God in uncertain times.</p>
+          <span class="sermon-tag">Faith · April 6, 2025</span>
+        </div>
+        <button class="play-btn">▶</button>
+      </div>
+
+      <div class="sermon-card" data-cat="prayer">
+        <div class="sermon-thumb">▶</div>
+        <div class="sermon-info">
+          <h3>The Power of a Praying Community</h3>
+          <p>Why prayer together changes everything.</p>
+          <span class="sermon-tag">Prayer · March 30, 2025</span>
+        </div>
+        <button class="play-btn">▶</button>
+      </div>
+
+      <div class="sermon-card" data-cat="family">
+        <div class="sermon-thumb">▶</div>
+        <div class="sermon-info">
+          <h3>Building a Christ-Centered Home</h3>
+          <p>Practical wisdom for families today.</p>
+          <span class="sermon-tag">Family · March 23, 2025</span>
+        </div>
+        <button class="play-btn">▶</button>
+      </div>
+
+      <div class="sermon-card" data-cat="faith">
+        <div class="sermon-thumb">▶</div>
+        <div class="sermon-info">
+          <h3>Amazing Grace: More Than a Song</h3>
+          <p>Understanding the depth of God's grace.</p>
+          <span class="sermon-tag">Faith · March 16, 2025</span>
+        </div>
+        <button class="play-btn">▶</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
        <!-- EVENTS -->
-        <section class="events">
+        <section class="events" id="events">
             <div class="container">
                 <span class="section-tag">Upcoming</span>
                 <h2 class="section-title">Events & Gatherings</h2>
@@ -185,34 +285,118 @@
                         </div>
 
                         <div class="event-info">
-                            <h3>Youth Moring</h3>
+                            <h3>Youth Morning</h3>
                             <p>Worship, games. and fellowship for teens and young adults.</p>
                             <span class="event-time">🕕 8:00 AM - 12:00 PM </span>
                         </div>
-                    </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- GIVE -->
-         <section class="give" id="giv">
-            <div class="container">
-                <span class="section-tag">Generosity</span>
-                <h2 class="section-title">Give to the Church</h2>
-                <div class="gold-line"></div>
-                <p class="give-desc">
-                    Your Generosity supports our mission and community Every gift makes a difference.
-                </p>
-                <div class="give-buttons">
-                    <a href="#contact" class="btn btn-gold">Give Online</a>
-                    <a href="#contact" class="btn btn-outline-dark">Learn More</a>
-                </div>
-            </div>
-         </section>
+          <!-- ===== GIVE ===== -->
+<section class="give" id="give">
+  <div class="container">
+    <span class="section-tag">Generosity</span>
+    <h2 class="section-title">Give to the Church</h2>
+    <div class="gold-line"></div>
+    <p class="give-desc">
+      Your generosity supports our mission. 
+      Choose your preferred giving method below.
+    </p>
+
+    <div class="give-methods-grid">
+
+      <!-- PayPal -->
+      <div class="give-method-card">
+        <div class="give-icon">🅿️</div>
+        <h3>PayPal</h3>
+        <p>Give securely online using your 
+           PayPal account or card.</p>
+        <a href="https://paypal.me/tampamariam" 
+           target="_blank" 
+           class="btn btn-gold">
+          Donate via PayPal
+        </a>
+      </div>
+
+      <!-- Cash App -->
+      <div class="give-method-card">
+        <div class="give-icon">💚</div>
+        <h3>Cash App</h3>
+        <p>Send your donation directly 
+           through Cash App.</p>
+        <div class="give-info-box">
+          $<span id="cashapp-tag">tampamariam</span>
+        </div>
+        <button class="btn btn-gold" 
+                onclick="copyText('cashapp-tag')">
+          Copy $Cashtag
+        </button>
+      </div>
+
+      <!-- Zelle -->
+      <div class="give-method-card">
+        <div class="give-icon">💜</div>
+        <h3>Zelle</h3>
+        <p>Fast and free bank transfer 
+           using Zelle.</p>
+        <div class="give-info-box">
+          <span id="zelle-info">(813) 626-6042</span>
+        </div>
+        <button class="btn btn-gold"
+                onclick="copyText('zelle-info')">
+          Copy Number
+        </button>
+      </div>
+
+      <!-- Check -->
+      <div class="give-method-card">
+        <div class="give-icon">📝</div>
+        <h3>Check</h3>
+        <p>Mail your check payable to 
+           Deber Genete St Mary Church.</p>
+        <div class="give-info-box">
+          2418 South 86th St<br>
+          Tampa, FL 33619
+        </div>
+      </div>
+
+      <!-- Debit / Credit -->
+      <div class="give-method-card">
+        <div class="give-icon">💳</div>
+        <h3>Debit / Credit Card</h3>
+        <p>Give using your debit or 
+           credit card securely online.</p>
+        <a href="https://paypal.me/tampamariam" 
+           target="_blank" 
+           class="btn btn-gold">
+          Pay by Card
+        </a>
+      </div>
+
+      <!-- In Person -->
+      <div class="give-method-card">
+        <div class="give-icon">🙏</div>
+        <h3>In Person</h3>
+        <p>Give during our Sunday service 
+           or visit the church office.</p>
+        <div class="give-info-box">
+          Sunday: 9:00 AM & 11:00 AM
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+              
 
          <!-- CONTACT -->
-          <section class="Contact" id="Contact">
+          <section class="contact" id="contact">
             <div class="container">
                 <span class="section-tag">Reach Out</span>
                 <h2 class="section-title">Get in Touch</h2>
@@ -227,14 +411,14 @@
             <span class="info-icon">📍</span>
             <div>
               <h4>Address</h4>
-              <p>123 Faith Avenue<br>Your City, State 00000</p>
+              <p>2418 South 86th St<br>Tampa, Fl 33619</p>
             </div>
           </div>
           <div class="info-item">
             <span class="info-icon">📞</span>
             <div>
               <h4>Phone</h4>
-              <p>(000) 000-0000</p>
+              <p>(813) 626-6042</p>
             </div>
           </div>
           <div class="info-item">
@@ -254,6 +438,18 @@
             </div>
           </div>
         </div>
+
+
+        <div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.52!2d-82.35444!3d27.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c17b6c5d5a5d%3A0x9876!2s2418+S+86th+St%2C+Tampa%2C+FL+33619!5e0!3m2!1sen!2sus"
+    width="100%"
+    height="280"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+</div>
 
         <!-- Contact Form -->
          <form class="contact-form" id="contactForm">
