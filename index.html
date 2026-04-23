@@ -33,20 +33,28 @@
 
            <!-- Language Toggle -->
 
-<div class="lang-toggle">
-  <button class="lang-btn active" 
-          id="btn-en"
-          onclick="setLang('en')">
-    🇺🇸 EN
+<div class="lang-dropdown">
+  <button class="lang-drop-btn" 
+          onclick="toggleLangMenu()">
+    <span id="current-flag">🇺🇸</span>
+    <span id="current-lang">English</span>
+    <span class="lang-arrow">▾</span>
   </button>
-  <button class="lang-btn" 
-          id="btn-am"
-          onclick="setLang('am')">
-    🇪🇹 አማ
-  </button>
+  <div class="lang-menu" id="lang-menu">
+    <div class="lang-option" 
+         onclick="setLang('en')">
+      🇺🇸 English
+    </div>
+    <div class="lang-option"
+         onclick="setLang('am')">
+      🇪🇹 Amharic
+    </div>
+  </div>
 </div>
-           <ul class="nav-links">
-                <li><a href="#home" id="nav-home">Home</a></li>
+
+
+<ul class="nav-links">
+ <li><a href="#home" id="nav-home">Home</a></li>
 <li><a href="#about" id="nav-about">About</a></li>
 <li><a href="#services" id="nav-services">Services</a></li>
 <li><a href="#sermons" id="nav-sermons">Sermons</a></li>

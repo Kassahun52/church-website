@@ -141,7 +141,7 @@ img {
    gap: 10px;
    /* height: 100%; */
 }
-.log-cross {
+.logo-ross {
   width: 36px;
   height: 36px;
   overflow: hidden;
@@ -155,7 +155,7 @@ img {
   /* color: var(--dark); */
   /* font-weight: 700; */
 }
-.log-cross-img {
+.logo-cross {
   width: 36;
   height: 36;
   border-radius: 50%;
@@ -168,6 +168,13 @@ img {
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
+}
+
+.logo-subtitle {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+  margin-top: 1px;
 }
 .nav-links {
   display: flex;
@@ -259,7 +266,7 @@ img {
   background-position: right center;
   background-repeat: no-repeat;
   background-blend-mode: luminosity;
-  opacity-blend: 0.1;
+  
   min-height: 560px;
   display: flex;
   align-items: center;
@@ -825,6 +832,75 @@ img {
   line-height: 1.6;
 }
 
+/* ===== LANGUAGE DROPDOWN ===== */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-drop-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.lang-drop-btn:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.lang-arrow {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
+  min-width: 140px;
+  z-index: 2000;
+  border: 1px solid var(--border);
+}
+
+.lang-menu.open {
+  display: block;
+}
+
+.lang-option {
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+}
+
+.lang-option:hover {
+  background: var(--warm);
+}
+
+.lang-option:first-child {
+  border-bottom: 1px solid var(--border);
+}
+
+
 
 /* ===== FOOTER ===== */
 .footer {
@@ -973,6 +1049,7 @@ img {
     gap: 24px;
   }
 }
+
 
 
 

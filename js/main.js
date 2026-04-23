@@ -167,7 +167,46 @@ function setLang(lang) {
     .classList.toggle('active', lang === 'am');
 }
 
+// ===== LANG DROPDOWN =====
+function toggleLangMenu() {
+  const menu = document.getElementById('lang-menu');
+  menu.classList.toggle('open');
+}
 
+// Close when clicking outside
+document.addEventListener('click', function(e) {
+  const dropdown = document.querySelector(
+    '.lang-dropdown'
+  );
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('lang-menu')
+      .classList.remove('open');
+  }
+});
+
+
+function setLang(lang) {
+  const t = translations[lang];
+  for (const id in t) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = t[id];
+  }
+
+  // Update dropdown display
+  const flag = document.getElementById('current-flag');
+  const name = document.getElementById('current-lang');
+  if (lang === 'en') {
+    if (flag) flag.textContent = '🇺🇸';
+    if (name) name.textContent = 'English';
+  } else {
+    if (flag) flag.textContent = '🇪🇹';
+    if (name) name.textContent = 'Amharic';
+  }
+
+  // Close menu
+  document.getElementById('lang-menu')
+    .classList.remove('open');
+}
 
 
 
