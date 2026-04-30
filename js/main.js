@@ -159,7 +159,23 @@ const translations = {
     // CONTACT
     'contact-tag':    'Reach Out',
     'contact-title':  'Get in Touch',
+    // CONTACT FORM LABELS
+'lbl-fname':   'First Name',
+'lbl-lname':   'Last Name',
+'lbl-email':   'Email',
+'lbl-subject': 'Subject',
+'lbl-message': 'Message',
+'lbl-send':    'Send Message',
+
+'opt-general':  'General Inquiry',
+'opt-prayer':   'Prayer Request',
+'opt-visit':    'Plan a visit',
+'opt-baptism':  'Baptism',
+'opt-matrimony':'Matrimony',
+'opt-wake':     'Wake Service',
+
   },
+
 
   am: {
     // HERO
@@ -203,8 +219,28 @@ const translations = {
     'give-title':     'ለቤተክርስቲያን ስጡ',
     // CONTACT
     'contact-tag':    'ያናግሩን',
-    'contact-title':  'እናናግርዎ',
-  }
+    'contact-title': 'እናናግርህ',
+// CONTACT FORM LABELS
+'lbl-fname':   'ስም',
+'lbl-lname':   'የአባት ስም',
+'lbl-email':   'ኢሜይል',
+'lbl-subject': 'ርዕስ',
+'lbl-message': 'መልዕክት',
+'lbl-send':    'ላክ',
+
+'opt-general':   'ጠቅላላ ጥያቄ',
+'opt-prayer':    'የጸሎት ጥያቄ',
+'opt-visit':     'ሊጠይቁን',
+'opt-baptism':   'ጥምቀት',
+'opt-matrimony': 'ጋብቻ',
+'opt-wake':      'ሲዐት',
+
+
+},        // ← en ይዘጋል
+
+  
+   
+
 };
 
 // ===== LANG DROPDOWN TOGGLE =====

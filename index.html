@@ -394,7 +394,10 @@
             </div>
             <div class="info-item">
               <span class="info-icon">📞</span>
-              <div><h4>Phone</h4><p>(813) 626-6042</p></div>
+              <div><h4>Phone</h4>
+                <p>+1(813) 626-6042</p>
+                <p>+1(813) 679-4982</p>
+              </div>
             </div>
             <div class="info-item">
               <span class="info-icon">✉️</span>
@@ -423,35 +426,35 @@
           <form class="contact-form" id="contactForm">
             <div class="form-row">
               <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" placeholder="First name" required>
+                <label for="fname" id="lbl-fname">First Name</label>
+                <input type="text" id="fname" placeholder="ስምዎን ያስገቡ" required>
               </div>
               <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" placeholder="Last name" required>
+                <label for="lname" id="lbl-lname">Last Name</label>
+                <input type="text" id="lname" placeholder="የአባት ስምዎን ያስገቡ" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="your@email.com" required>
+              <label for="email" id="lbl-email">Email</label>
+              <input type="email" id="email" placeholder="ኢሜይልዎን ያስገቡ" required>
             </div>
             <div class="form-group">
-              <label for="subject">Subject</label>
+              <label for="subject" id="lbl-subject">Subject</label>
               <select id="subject">
-                <option>General Inquiry</option>
-                <option>Prayer Request</option>
-                <option>Plan a visit</option>
-                <option>Baptism</option>
-                <option>Matrimony</option>
-                <option>Wake Service</option>
+                <option id="opt-general">General Inquiry</option>
+                <option id="opt-prayer">Prayer Request</option>
+                <option id="opt-visit">Plan a visit</option>
+                <option id="opt-baptism">Baptism</option>
+                <option id="opt-matrimony">Matrimony</option>
+                <option id="opt-wake">Wake Service</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
+              <label for="message" id="lbl-message">Message</label>
               <textarea id="message" rows="5"
-                        placeholder="Write your message..." required></textarea>
+                        placeholder="መልዕክትዎን ይጻፉ..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-gold">Send Message</button>
+            <button type="submit" class="btn btn-gold" id="lbl-send">Send Message</button>
           </form>
 
         </div>
