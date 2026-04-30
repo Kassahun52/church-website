@@ -76,6 +76,7 @@ img {
 }
 .gold-text {
   color: var(--gold);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 /* ===== BUTTONS ===== */
 .btn {
@@ -120,7 +121,7 @@ img {
 /* ===== NAVBAR ===== */
 .navbar {
   background: var(--dark);
-  height: 66px;
+  height: 70px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -164,7 +165,7 @@ img {
   
 }
 .logo-text {
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
@@ -248,21 +249,12 @@ img {
   transition: all 0.3s;
 }
 
-
 /* ===== HERO ===== */
-.hero {
-  background: var(--dark);
-  min-height: 560px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
 /* IMAGES PLACE HERE */
-.hero {
+
     .hero {
-  background: var(--dark);
-  background-image: url('images/church.jpg');
+  background-color: rgba(0, 0, 0, 0.10);
+  background-image: url(../images/St.jorg.jpg);
   background-size: cover;
   background-position: center top;
   background-blend-mode: overlay;
@@ -272,7 +264,7 @@ img {
   position: relative;
   overflow: hidden;
 }
-}
+
  /* LOGO CROSS IMGE */
 
 .logo-cross img {
@@ -288,7 +280,7 @@ img {
 }
 
 .logo-subtitle {
-  font-size: 10px;
+  font-size: 13px;
   color: rgba(255,255,255,0.4);
   letter-spacing: 0.3px;
   display: block;

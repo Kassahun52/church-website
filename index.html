@@ -3,651 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethiopian Orthodox Church</title>
+    <title>St, Mary Ethiopian Orthodox Church of Tampa</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-   
+
     <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <div class="nav-container">
 
-<nav class="navbar">
-  <div class="nav-container">
+        <div class="nav-logo">
+          <img src="images/cross.jpg" alt="Logo"
+               style="width:36px;height:36px;border-radius:50%;object-fit:cover">
+          <div>
+            <div class="logo-text">Deber Genete St, Mary</div>
+            <div class="logo-subtitle">Orthodox Tewahedo Church</div>
+          </div>
+        </div>
 
-    <div class="nav-logo">
-      <img src="images/cross.jpg"
-           alt="Logo"
-           style="width:36px;height:36px;
-                  border-radius:50%;
-                  object-fit:cover">
-      <div>
-        <div class="logo-text">
-          Deber Genete St, Mary
+        <!-- Language Toggle -->
+        <div class="lang-dropdown">
+          <button class="lang-drop-btn" onclick="toggleLangMenu()">
+            <span id="current-flag">🇺🇸</span>
+            <span id="current-lang">English</span>
+            <span class="lang-arrow">▾</span>
+          </button>
+          <div class="lang-menu" id="lang-menu">
+            <div class="lang-option" onclick="setLang('en')">🇺🇸 English</div>
+            <div class="lang-option" onclick="setLang('am')">🇪🇹 Amharic</div>
+          </div>
         </div>
-        <div class="logo-subtitle">
-          Orthodox Tewahedo Church
-        </div>
+
+        <ul class="nav-links">
+          <li><a href="#home"     id="nav-home">Home</a></li>
+          <li><a href="#about"    id="nav-about">About</a></li>
+          <li><a href="#services" id="nav-services">Services</a></li>
+          <li><a href="#sermons"  id="nav-sermons">Sermons</a></li>
+          <li><a href="#events"   id="nav-events">Events</a></li>
+          <li><a href="#give"     id="nav-give">Give</a></li>
+          <li><a href="#contact"  id="nav-contact">Contact</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
-    </div>
-
-           <!-- Language Toggle -->
-
-<div class="lang-dropdown">
-  <button class="lang-drop-btn" 
-          onclick="toggleLangMenu()">
-    <span id="current-flag">🇺🇸</span>
-    <span id="current-lang">English</span>
-    <span class="lang-arrow">▾</span>
-  </button>
-  <div class="lang-menu" id="lang-menu">
-    <div class="lang-option" 
-         onclick="setLang('en')">
-      🇺🇸 English
-    </div>
-    <div class="lang-option"
-         onclick="setLang('am')">
-      🇪🇹 Amharic
-    </div>
-  </div>
-</div>
-
-
-<ul class="nav-links">
- <li><a href="#home" id="nav-home">Home</a></li>
-<li><a href="#about" id="nav-about">About</a></li>
-<li><a href="#services" id="nav-services">Services</a></li>
-<li><a href="#sermons" id="nav-sermons">Sermons</a></li>
-<li><a href="#events" id="nav-events">Events</a></li>
-<li><a href="#give" id="nav-give">Give</a></li>
-<li><a href="#contact" id="nav-contact">Contact</a></li>
-            </ul>
-
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </div>
     </nav>
 
-    <!-- HERO -->
-     <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="hero-tag" id="txt-tag">House of Faith</p> 
-            <h1>Welcome to <br>
-            <span class="gold-text" id="txt-title">Deber Genete St, Mary Orthodox Tewahedo  church               
-            </span>
-            </h1>
-            <p class="hero-desc" id="text-desc">
-                A gathering place of faith, worship, and fellowship.
-                All are welcome - come as you are.
-            </p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-gold" id="txt-btn1">Our Services</a>
-                <a href="#contact" class="btn btn-outline" id="txt-btn2">Plan a visit</a>
-            </div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="hero-tag" id="txt-tag">House of Faith</p>
+        <h1>Welcome to <br>
+          <span class="gold-text" id="txt-title">
+            Deber Genete St, Mary Orthodox Tewahedo church
+          </span>
+        </h1>
+        <p class="hero-desc" id="text-desc">
+          A gathering place of faith, worship, and fellowship.
+          All are welcome - come as you are.
+        </p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-gold"    id="txt-btn1">Our Services</a>
+          <a href="#contact"  class="btn btn-outline" id="txt-btn2">Plan a visit</a>
         </div>
-     </section>
+      </div>
+    </section>
 
-     <!-- ABOUT -->
-      <section class="about" id="about">
-        <div class="container">
-            <span class="section-tag">Who We Are</span>
-            <h2 class="section-title">Our Story & Mission</h2>
-            <div class="gold-line"></div>
-            <p class="about-text">
-                Founded with a vision to build a vibrant, 
-        Christ-centered Ethiopian Orthodox community.
-        Rooted in ancient traditions, serving with 
-        modern compassion.
-        ሕያው፣ 
-ክርስቶስን ማዕከል ያደረገ የኢትዮጵያ ኦርቶዶክስ ማህበረሰብ ለመገንባት ባለ ራዕይ የተመሰረተ።
-በጥንታዊ ወጎች ላይ የተመሰረተ፣ ዘመናዊ ርህራሄን የሚያከብር።
-           </p>
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+      <div class="container">
+        <span class="section-tag" id="about-tag">Who We Are</span>
+        <h2 class="section-title" id="about-title">Our Story & Mission</h2>
+        <div class="gold-line"></div>
+        <p class="about-text">
+         St Mary's Ethiopian OrthodoxTewahedo Church Strives to fulfill the spirtual needs of its members by providing church and related services in a manner consistent with the Ethiopian Orthodox Tewahedo church's faith, values and tradition.
+        </p>
+        <div class="stats-row">
+          <div class="stat"><h3>200+</h3><p>Members</p></div>
+          <div class="stat"><h3>12</h3><p>Ministries</p></div>
+          <div class="stat"><h3>34+</h3><p>Years</p></div>
+        </div>
+      </div>
+    </section>
 
-           <div class="stats-row">
-            <div class="stat">
-                <h3>500+</h3>
-                <p>Members</p>
-             </div>
-             <div class="stat">
-                <h3>12</h3>
-                <p>Ministries</p>
+    <!-- ===== SERVICES ===== -->
+   
+    <section class="services" id="services">
+      <div class="container">
+        <span class="section-tag" id="service-tag">What We Offer</span>
+        <h2 class="section-title" id="service-title">Our Services</h2>
+        <div class="gold-line"></div>
+
+        <p class="about-text">
+          Established in 1992, the St, Mary's Ethiopian Orthodox Church has been serving the Tampa Bay community and surr cities for over 34 Years Services include Sunday School, religious counseling, marriage, burial rites(Fitat), baptism, visiting and conforming the sick.
+        </p>
+
+        <div class="services-grid">
+
+          <div class="service-item">
+            <div class="service-img-box">
+              <img src="images/church.jpg" alt="Baptism Service"
+                   style="width:100%;height:100%;object-fit:cover">
+              <div class="service-img-placeholder">💧</div>
+            </div>
+            <div class="service-content">
+              <h3 id="svc-baptism">Baptism / ጥምቀት</h3>
+              <p>Sacrament of Christian initiation through water and the Holy Spirit.
+                 "Go ye therefore, and teach all nations, baptizing them in the name
+                 of the Father, and of the Son, and of the Holy Ghost." — Matthew 28:19</p>
+              <a href="" target="_blank" class="btn btn-gold btn-sm">Book Appointment</a>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-img-box">
+              <img src="images/confession.jpg" alt="Confession"
+                   onerror="this.style.display='none'">
+              <div class="service-img-placeholder">🙏</div>
+            </div>
+            <div class="service-content">
+              <h3 id="svc-confession">Confession / ኑዛዜ</h3>
+              <p>The sacrament of reconciliation — confess your sins and receive
+                 absolution and peace of soul. Available by appointment with our priests.</p>
+              <a href="#contact" class="btn btn-gold btn-sm">Book Appointment</a>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-img-box">
+              <img src="images/holy.jpg" alt="Holy Communion"
+                   onerror="this.style.display='none'">
+              <div class="service-img-placeholder">🍷</div>
+            </div>
+            <div class="service-content">
+              <h3 id="svc-communion">Holy Communion / ቅዱስ ቁርባን</h3>
+              <p>Receiving the body and blood of Christ — the central act of worship.
+                 Every Sunday at 9:00 AM and 11:00 AM services.</p>
+              <a href="#contact" class="btn btn-gold btn-sm">Learn More</a>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-img-box">
+              <img src="images/charity.jpg" alt="Charity"
+                   onerror="this.style.display='none'">
+              <div class="service-img-placeholder">❤️</div>
+            </div>
+            <div class="service-content">
+              <h3 id="svc-charity">Charity / ምጽዋት</h3>
+              <p>Community support — food, medical, education, and emergency assistance
+                 for those in need in our community and beyond.</p>
+              <a href="#contact" class="btn btn-gold btn-sm">Get Help</a>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-img-box">
+              <img src="images/matrimony.jpg" alt="Matrimony"
+                   onerror="this.style.display='none'">
+              <div class="service-img-placeholder">💍</div>
+            </div>
+            <div class="service-content">
+              <h3 id="svc-matrimony">Matrimony / ጋብቻ</h3>
+              <p>The holy sacrament of Christian marriage — blessed and witnessed
+                 by the Church. Pre-marital counseling required. Apply 3 months in advance.</p>
+              <a href="#contact" class="btn btn-gold btn-sm">Book Appointment</a>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-img-box">
+              <img src="images/wake.jpg" alt="Wake Service"
+                   onerror="this.style.display='none'">
+              <div class="service-img-placeholder">🕯️</div>
+            </div>
+            <div class="service-content">
+              <h3 id="svc-wake">Wake Service / ሲዐት</h3>
+              <p>Funeral and wake arrangements — honouring the departed with prayer
+                 and ceremony. We are available 7 days a week for families in need.</p>
+              <a href="#contact" class="btn btn-gold btn-sm">Contact Us</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERMONS ===== -->
+    <section class="sermons" id="sermons">
+      <div class="container">
+        <span class="section-tag" id="sermons-tag">Listen & Learn</span>
+        <h2 class="section-title" id="sermons-title">Recent Sermons</h2>
+        <div class="gold-line"></div>
+
+        <div class="sermon-filters">
+          <button class="filter-btn active"
+                  onclick="filterSermon('all',this)"    id="sf-all">All / ሁሉም</button>
+          <button class="filter-btn"
+                  onclick="filterSermon('faith',this)"  id="sf-faith">Faith / እምነት</button>
+          <button class="filter-btn"
+                  onclick="filterSermon('prayer',this)" id="sf-prayer">Prayer / ጸሎት</button>
+          <button class="filter-btn"
+                  onclick="filterSermon('family',this)" id="sf-family">Family / ቤተሰብ</button>
+        </div>
+
+        <div class="sermon-list">
+
+          <div class="sermon-card" data-cat="faith">
+            <div class="sermon-thumb">▶</div>
+            <div class="sermon-info">
+              <h3 id="sr1-title">Walking by Faith, Not by Sight</h3>
+              <p id="sr1-desc">A message on trusting God in uncertain times.</p>
+              <span class="sermon-tag">Faith · April 6, 2025</span>
+            </div>
+            <!-- ✅ FIX 2: YouTube URL ተስተካክሏል — https:// እና youtube.com -->
+            <button class="play-btn"
+                    onclick="window.open('https://www.youtube.com/@tampamariam7033','_blank')">▶</button>
+          </div>
+
+          <div class="sermon-card" data-cat="prayer">
+            <div class="sermon-thumb">▶</div>
+            <div class="sermon-info">
+              <h3>The Power of a Praying Community</h3>
+              <p>Why prayer together changes everything.</p>
+              <span class="sermon-tag">Prayer · March 30, 2025</span>
+            </div>
+            <button class="play-btn"
+                    onclick="window.open('https://www.youtube.com/@tampamariam7033','_blank')">▶</button>
+          </div>
+
+          <div class="sermon-card" data-cat="family">
+            <div class="sermon-thumb">▶</div>
+            <div class="sermon-info">
+              <h3>Building a Christ-Centered Home</h3>
+              <p>Practical wisdom for families today.</p>
+              <span class="sermon-tag">Family · March 23, 2025</span>
+            </div>
+            <button class="play-btn"
+                    onclick="window.open('https://www.youtube.com/@tampamariam7033','_blank')">▶</button>
+          </div>
+
+          <div class="sermon-card" data-cat="faith">
+            <div class="sermon-thumb">▶</div>
+            <div class="sermon-info">
+              <h3>Amazing Grace: More Than a Song</h3>
+              <p>Understanding the depth of God's grace.</p>
+              <span class="sermon-tag">Faith · March 16, 2025</span>
+            </div>
+            <button class="play-btn"
+                    onclick="window.open('https://www.youtube.com/@tampamariam7033','_blank')">▶</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EVENTS ===== -->
+    <section class="events" id="events">
+      <div class="container">
+        <span class="section-tag" id="events-tag">Upcoming</span>
+        <h2 class="section-title" id="events-title">Events & Gatherings</h2>
+        <div class="gold-line"></div>
+
+        <!-- ✅ FIX 3: Events closing divs ተስተካክለዋል -->
+        <div class="events-grid">
+
+          <div class="event-card">
+            <div class="event-date">
+              <span class="date-day">20</span>
+              <span class="date-month">Apr</span>
+            </div>
+            <div class="event-info">
+              <h3>Easter Sunday Celebration</h3>
+              <p>Special service celebrating the resurrection of Jesus Christ.</p>
+              <span class="event-time">🕘 8:30 PM & 2:00 AM</span>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-date">
+              <span class="date-day">27</span>
+              <span class="date-month">Apr</span>
+            </div>
+            <div class="event-info">
+              <h3>Community Outreach Day</h3>
+              <p>Serving our city - food, prayer, and practical help for those in need.</p>
+              <span class="event-time">🕗 8:00 AM - 1:00 PM</span>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <div class="event-date">
+              <span class="date-day">3</span>
+              <span class="date-month">May</span>
+            </div>
+            <div class="event-info">
+              <h3>Youth Morning</h3>
+              <p>Worship, games, and fellowship for teens and young adults.</p>
+              <span class="event-time">🕕 8:00 AM - 12:00 PM</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GIVE ===== -->
+    <section class="give" id="give">
+      <div class="container">
+        <span class="section-tag" id="give-tag">Generosity</span>
+        <h2 class="section-title" id="give-title">Give to the Church</h2>
+        <div class="gold-line"></div>
+        <p class="give-desc">
+          Your generosity supports our mission.
+          Choose your preferred giving method below.
+        </p>
+
+        <div class="give-methods-grid">
+
+          <div class="give-method-card">
+            <div class="give-icon">🅿️</div>
+            <h3>PayPal</h3>
+            <p>Give securely online using your PayPal account or card.</p>
+            <a href="https://paypal.me/tampamariam" target="_blank" class="btn btn-gold">
+              Donate via PayPal
+            </a>
+          </div>
+
+          <div class="give-method-card">
+            <div class="give-icon">💚</div>
+            <h3>Cash App</h3>
+            <p>Send your donation directly through Cash App.</p>
+            <div class="give-info-box">$<span id="cashapp-tag">tampamariam</span></div>
+            <button class="btn btn-gold" onclick="copyText('cashapp-tag')">Copy $Cashtag</button>
+          </div>
+
+          <div class="give-method-card">
+            <div class="give-icon">💜</div>
+            <h3>Zelle</h3>
+            <p>Fast and free bank transfer using Zelle.</p>
+            <div class="give-info-box"><span id="zelle-info">(813) 626-6042</span></div>
+            <button class="btn btn-gold" onclick="copyText('zelle-info')">Copy Number</button>
+          </div>
+
+          <div class="give-method-card">
+            <div class="give-icon">📝</div>
+            <h3>Check</h3>
+            <p>Mail your check payable to Deber Genete St Mary Church.</p>
+            <div class="give-info-box">2418 South 86th St<br>Tampa, FL 33619</div>
+          </div>
+
+          <div class="give-method-card">
+            <div class="give-icon">💳</div>
+            <h3>Debit / Credit Card</h3>
+            <p>Give using your debit or credit card securely online.</p>
+            <a href="https://paypal.me/tampamariam" target="_blank" class="btn btn-gold">
+              Pay by Card
+            </a>
+          </div>
+
+          <div class="give-method-card">
+            <div class="give-icon">🙏</div>
+            <h3>In Person</h3>
+            <p>Give during our Sunday service or visit the church office.</p>
+            <div class="give-info-box">Sunday: 9:00 AM & 11:00 AM</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <span class="section-tag" id="contact-tag">Reach Out</span>
+        <h2 class="section-title" id="contact-title">Get in Touch</h2>
+        <div class="gold-line"></div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div><h4>Address</h4><p>2418 South 86th St<br>Tampa, FL 33619</p></div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📞</span>
+              <div><h4>Phone</h4><p>(813) 626-6042</p></div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">✉️</span>
+              <div><h4>Email</h4><p>info@yourchurch.org</p></div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🕐</span>
+              <div>
+                <h4>Service Hours</h4>
+                <p>Sunday: 5:00 AM & 11:00 AM<br>
+                   Full service with kedase<br>
+                   The day of Month 12, 21, 23, 27<br>
+                   Kidan Tselot with Tsebele</p>
               </div>
-              <div class="stat">
-                <h3>20+</h3>
-                <p>Years</p>
-              </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES -->
-          <div class="services-grid">
-
-  <!-- Baptism -->
-  <div class="service-item">
-    <div class="service-img-box">
-      <img src="images/church.jpg"
-           alt="Baptism Service"
-           style="width: 100%;height: 100%;
-           object-fit: cover">           
-      <div class="service-img-placeholder">💧</div>
-    </div>
-    <div class="service-content">
-      <h3>Baptism / ጥምቀት</h3>
-      <p>Sacrament of Christian initiation 
-         through water and the Holy Spirit. 
-         "Go ye therefore, and teach all nations, 
-         baptizing them in the name of the Father, 
-         and of the Son, and of the Holy Ghost." 
-         — Matthew 28:19</p>
-      <a href=""
-         target="_blank"
-         class="btn btn-gold btn-sm">
-        Book Appointment
-      </a>
-    </div>
-  </div>
-
-  <!-- Confession -->
-  <div class="service-item">
-    <div class="service-img-box">
-      <img src="images/confession.jpg" 
-           alt="Confession"
-           onerror="this.style.display='none'">
-      <div class="service-img-placeholder">🙏</div>
-    </div>
-    <div class="service-content">
-      <h3>Confession / ኑዛዜ</h3>
-      <p>The sacrament of reconciliation — 
-         confess your sins and receive 
-         absolution and peace of soul. 
-         Available by appointment with 
-         our priests.</p>
-      <a href="#contact" 
-         class="btn btn-gold btn-sm">
-        Book Appointment
-      </a>
-    </div>
-  </div>
-
-  <!-- Holy Communion -->
-  <div class="service-item">
-    <div class="service-img-box">
-      <img src="images/kidusekurban.jpg" 
-           alt="Holy Communion"
-           onerror="this.style.display='none'">
-      <div class="service-img-placeholder">🍷</div>
-    </div>
-    <div class="service-content">
-      <h3>Holy Communion / ቅዱስ ቁርባን</h3>
-      <p>Receiving the body and blood of 
-         Christ — the central act of worship. 
-         Every Sunday at 9:00 AM and 11:00 AM 
-         services.</p>
-      <a href="#contact" 
-         class="btn btn-gold btn-sm">
-        Learn More
-      </a>
-    </div>
-  </div>
-
-  <!-- Charity -->
-  <div class="service-item">
-    <div class="service-img-box">
-      <img src="images/charity.jpg" 
-           alt="Charity"
-           onerror="this.style.display='none'">
-      <div class="service-img-placeholder">❤️</div>
-    </div>
-    <div class="service-content">
-      <h3>Charity / ምጽዋት</h3>
-      <p>Community support — food, medical, 
-         education, and emergency assistance 
-         for those in need in our community 
-         and beyond.</p>
-      <a href="#contact" 
-         class="btn btn-gold btn-sm">
-        Get Help
-      </a>
-    </div>
-  </div>
-
-  <!-- Matrimony -->
-  <div class="service-item">
-    <div class="service-img-box">
-      <img src="images/matrimony.jpg" 
-           alt="Matrimony"
-           onerror="this.style.display='none'">
-      <div class="service-img-placeholder">💍</div>
-    </div>
-    <div class="service-content">
-      <h3>Matrimony / ጋብቻ</h3>
-      <p>The holy sacrament of Christian 
-         marriage — blessed and witnessed 
-         by the Church. Pre-marital counseling 
-         required. Apply 3 months in advance.</p>
-      <a href="#contact" 
-         class="btn btn-gold btn-sm">
-        Book Appointment
-      </a>
-    </div>
-  </div>
-
-  <!-- Wake Service -->
-  <div class="service-item">
-    <div class="service-img-box">
-      <img src="images/wake.jpg" 
-           alt="Wake Service"
-           onerror="this.style.display='none'">
-      <div class="service-img-placeholder">🕯️</div>
-    </div>
-    <div class="service-content">
-      <h3>Wake Service / ሲዐት</h3>
-      <p>Funeral and wake arrangements — 
-         honouring the departed with prayer 
-         and ceremony. We are available 
-         7 days a week for families in need.</p>
-      <a href="#contact" 
-         class="btn btn-gold btn-sm">
-        Contact Us
-      </a>
-    </div>
-  </div>
-
-</div>
-
-       <!-- ===== SERMONS ===== -->
-<section class="sermons" id="sermons">
-  <div class="container">
-    <span class="section-tag">Listen & Learn</span>
-    <h2 class="section-title">Recent Sermons</h2>
-    <div class="gold-line"></div>
-
-    <div class="sermon-filters">
-      <button class="filter-btn active" 
-              onclick="filterSermon('all', this)">
-        All
-      </button>
-      <button class="filter-btn" 
-              onclick="filterSermon('faith', this)">
-        Faith
-      </button>
-      <button class="filter-btn" 
-              onclick="filterSermon('prayer', this)">
-        Prayer
-      </button>
-      <button class="filter-btn" 
-              onclick="filterSermon('family', this)">
-        Family
-      </button>
-    </div>
-
-    <div class="sermon-list">
-
-      <div class="sermon-card" data-cat="faith">
-        <div class="sermon-thumb">▶</div>
-        <div class="sermon-info">
-          <h3>Walking by Faith, Not by Sight</h3>
-          <p>A message on trusting God in uncertain times.</p>
-          <span class="sermon-tag">Faith · April 6, 2025</span>
-        </div>
-
-        <button class="play-btn"
-        onclick="window.open(
-          'https:/www.youtub.com/@tampamariam7033',
-          '_blank'
-        )">▶
-       </button>
-      </div>
-
-      <div class="sermon-card" data-cat="prayer">
-        <div class="sermon-thumb">▶</div>
-        <div class="sermon-info">
-          <h3>The Power of a Praying Community</h3>
-          <p>Why prayer together changes everything.</p>
-          <span class="sermon-tag">Prayer · March 30, 2025</span>
-        </div>
-        <button class="play-btn">▶</button>
-      </div>
-
-      <div class="sermon-card" data-cat="family">
-        <div class="sermon-thumb">▶</div>
-        <div class="sermon-info">
-          <h3>Building a Christ-Centered Home</h3>
-          <p>Practical wisdom for families today.</p>
-          <span class="sermon-tag">Family · March 23, 2025</span>
-        </div>
-        <button class="play-btn">▶</button>
-      </div>
-
-      <div class="sermon-card" data-cat="faith">
-        <div class="sermon-thumb">▶</div>
-        <div class="sermon-info">
-          <h3>Amazing Grace: More Than a Song</h3>
-          <p>Understanding the depth of God's grace.</p>
-          <span class="sermon-tag">Faith · March 16, 2025</span>
-        </div>
-        <button class="play-btn">▶</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-       <!-- EVENTS -->
-        <section class="events" id="events">
-            <div class="container">
-                <span class="section-tag">Upcoming</span>
-                <h2 class="section-title">Events & Gatherings</h2>
-                <div class="gold-line"></div>
-
-                <div class="events-grid">
-
-                    <div class="event-card">
-                        <div class="event-date">
-                        <span class="date-day">20</span>
-                        <span class="date-month">Apr</span>
-                     </div>
-
-                     <div class="event-info">
-                        <h3>Easter Sunday Celeberation</h3>
-                        <p>Special service celebrating the resurrection of Jesus Christ.</p>
-                        <span class="event-time">🕘8:30 PM & 2:00 AM</span>
-                     </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span class="date-day">27</span>
-                            <span class="date-month">Apr</span>
-                        </div>
-
-                        <div class="event-info">
-                            <h3>Community Outreach Day</h3>
-                            <p>Serving our city - food, prayer, and practrical help for those in need.</p>
-                            <span class="event-time">🕗 8:00 AM - 1:00 PM</span>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span class="date-day">3</span>
-                            <span class="date-month">May</span>
-                        </div>
-
-                        <div class="event-info">
-                            <h3>Youth Morning</h3>
-                            <p>Worship, games. and fellowship for teens and young adults.</p>
-                            <span class="event-time">🕕 8:00 AM - 12:00 PM </span>
-                        </div>
-
-                </div>
-            </div>
-        </section>
-
-          <!-- ===== GIVE ===== -->
-<section class="give" id="give">
-  <div class="container">
-    <span class="section-tag">Generosity</span>
-    <h2 class="section-title">Give to the Church</h2>
-    <div class="gold-line"></div>
-    <p class="give-desc">
-      Your generosity supports our mission. 
-      Choose your preferred giving method below.
-    </p>
-
-    <div class="give-methods-grid">
-
-      <!-- PayPal -->
-      <div class="give-method-card">
-        <div class="give-icon">🅿️</div>
-        <h3>PayPal</h3>
-        <p>Give securely online using your 
-           PayPal account or card.</p>
-        <a href="https://paypal.me/tampamariam" 
-           target="_blank" 
-           class="btn btn-gold">
-          Donate via PayPal
-        </a>
-      </div>
-
-      <!-- Cash App -->
-      <div class="give-method-card">
-        <div class="give-icon">💚</div>
-        <h3>Cash App</h3>
-        <p>Send your donation directly 
-           through Cash App.</p>
-        <div class="give-info-box">
-          $<span id="cashapp-tag">tampamariam</span>
-        </div>
-        <button class="btn btn-gold" 
-                onclick="copyText('cashapp-tag')">
-          Copy $Cashtag
-        </button>
-      </div>
-
-      <!-- Zelle -->
-      <div class="give-method-card">
-        <div class="give-icon">💜</div>
-        <h3>Zelle</h3>
-        <p>Fast and free bank transfer 
-           using Zelle.</p>
-        <div class="give-info-box">
-          <span id="zelle-info">(813) 626-6042</span>
-        </div>
-        <button class="btn btn-gold"
-                onclick="copyText('zelle-info')">
-          Copy Number
-        </button>
-      </div>
-
-      <!-- Check -->
-      <div class="give-method-card">
-        <div class="give-icon">📝</div>
-        <h3>Check</h3>
-        <p>Mail your check payable to 
-           Deber Genete St Mary Church.</p>
-        <div class="give-info-box">
-          2418 South 86th St<br>
-          Tampa, FL 33619
-        </div>
-      </div>
-
-      <!-- Debit / Credit -->
-      <div class="give-method-card">
-        <div class="give-icon">💳</div>
-        <h3>Debit / Credit Card</h3>
-        <p>Give using your debit or 
-           credit card securely online.</p>
-        <a href="https://paypal.me/tampamariam" 
-           target="_blank" 
-           class="btn btn-gold">
-          Pay by Card
-        </a>
-      </div>
-
-      <!-- In Person -->
-      <div class="give-method-card">
-        <div class="give-icon">🙏</div>
-        <h3>In Person</h3>
-        <p>Give during our Sunday service 
-           or visit the church office.</p>
-        <div class="give-info-box">
-          Sunday: 9:00 AM & 11:00 AM
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-         <!-- CONTACT -->
-          <section class="contact" id="contact">
-            <div class="container">
-                <span class="section-tag">Reach Out</span>
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="gold-line"></div>
-
-                <div class="contact-grid">
-
-                   
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <div class="info-item">
-            <span class="info-icon">📍</span>
-            <div>
-              <h4>Address</h4>
-              <p>2418 South 86th St<br>Tampa, Fl 33619</p>
             </div>
           </div>
-          <div class="info-item">
-            <span class="info-icon">📞</span>
-            <div>
-              <h4>Phone</h4>
-              <p>(813) 626-6042</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">✉️</span>
-            <div>
-              <h4>Email</h4>
-              <p>info@yourchurch.org</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">🕐</span>
-            <div>
-              <h4>Service Hours</h4>
-              <p>Sunday: 5:00 AM &11:00 AM<br>
-                Full service with kedase <br>
-                 The day of Month 12, 21,  23, 27<br>
-                 Kidan Tselot with Tsebele<br>
-                </p>
-            </div>
-          </div>
-        </div>
 
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.52!2d-82.35444!3d27.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c17b6c5d5a5d%3A0x9876!2s2418+S+86th+St%2C+Tampa%2C+FL+33619!5e0!3m2!1sen!2sus"
+              width="100%" height="280" style="border:0;"
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
 
-        <div class="map-container">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.52!2d-82.35444!3d27.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c17b6c5d5a5d%3A0x9876!2s2418+S+86th+St%2C+Tampa%2C+FL+33619!5e0!3m2!1sen!2sus"
-    width="100%"
-    height="280"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy">
-  </iframe>
-</div>
-
-        <!-- Contact Form -->
-         <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm">
             <div class="form-row">
-                <div class="form-group">
-                    <label for="fname">First Name</label>
-                    <input type="text"
-                            id="fname"
-                            placeholder="First name"
-                            required>
-                </div>
-
-                <div class="form-group">
-                    <label for="lname">Last Name</label>
-                    <input type="text"
-                             id="lname"
-                             placeholder="Last name"
-                             required>
-
-                </div>
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="First name" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Last name" required>
+              </div>
             </div>
-
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email"
-                        id="email"
-                        placeholder="your@email.com"
-                        required>
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required>
             </div>
-
             <div class="form-group">
-                <label for="subject">Subject</label>
-                <select id="subject">
-                    <option>General Inquiry</option>
-                     <option>Prayer Request</option>
-                      <option>Plan a visit</option>
-                       <option>Baptism</option>
-                        <option>Matrimony</option>
-                         <option>Wake Service</option>
-                          
-                </select>
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option>General Inquiry</option>
+                <option>Prayer Request</option>
+                <option>Plan a visit</option>
+                <option>Baptism</option>
+                <option>Matrimony</option>
+                <option>Wake Service</option>
+              </select>
             </div>
-
             <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message"
-                         rows="5"
-                         placeholder="Write your message..."
-                         required></textarea>
+              <label for="message">Message</label>
+              <textarea id="message" rows="5"
+                        placeholder="Write your message..." required></textarea>
             </div>
+            <button type="submit" class="btn btn-gold">Send Message</button>
+          </form>
 
-            <button type="submit" class="btn btn-gold">
-                send Message 
-            </button>
-            </form>
-            
-           </div>
-           </div>
-          </section>
+        </div>
+      </div>
+    </section>
 
-          <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ✅ FIX 4: Footer extra closing div ተሰረዘ -->
+    <footer class="footer">
+      <div class="container">
 
-          <footer class="footer">
-            <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="logo-cross">+</span>
+          </div>
+          <p class="footer-church-name">Deber Genete St, Mary Orthodox Tewahedo Church</p>
+          <p class="footer-tagline">Faith . Hope . Love . Community</p>
+        </div>
 
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <span class="logo-cross">+</span>
-                    </div>
-                    <p class="footer-church-name">Church Name</p>
-                    <p class="footer-tagline">
-                        Faith . Hope . Love . Community
-                    </p>
-                </div>
-           </div>
+        <div class="footer-social">
+          <a href="#" class="social-link">▶ YouTube</a>
+          <a href="#" class="social-link">f Facebook</a>
+          <a href="#" class="social-link">◈ Instagram</a>
+          <a href="#" class="social-link">𝕏 Twitter</a>
+        </div>
 
-           <div class="footer-social">
-            <a href="#" class="social-link">▶ YouTube</a>
-            <a href="#" class="social-link">f Facebook</a>
-            <a href="#" class="social-link">◈ Instagram</a>
-            <a href="#" class="social-link">𝕏 Twitter</a>
-           </div>
-           </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#events">Events</a>
+          <a href="#give">Give</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-           <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#events">Events</a>
-            <a href="#give">Give</a>
-            <a href="#contact">Contact</a>
-           </div>
+        <div class="footer-bottom">
+          <p id="copyright">
+            &copy; 2026 Deber Genete St, Mary Orthodox Tewahedo Church.
+            All rights reserved. Made with ♥ and faith.
+          </p>
+        </div>
 
-           <div class="footer-bottom">
-            <p id="copyright">
-                &copy; 2025 church Name.
-                All rights reserved.
-                Made with ♥ and faith.
-            </p>
-           </div>
+      </div>
+    </footer>
 
-           </div>
-          </footer>
+    <script src="js/main.js"></script>
 
-          <script src="js/main.js"></script>
-    
 </body>
 </html>
