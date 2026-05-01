@@ -116,6 +116,8 @@ function filterSermon(cat, btn) {
 
 // ===== LANGUAGE TRANSLATIONS =====
 const translations = {
+
+  // ==================== ENGLISH ====================
   en: {
     // HERO
     'txt-tag':        'House of Faith',
@@ -137,12 +139,12 @@ const translations = {
     // SERVICES
     'services-tag':   'What We Offer',
     'services-title': 'Our Services',
-    'svc-baptism':    'Baptism / ጥምቀት',
-    'svc-confession': 'Confession / ኑዛዜ',
-    'svc-communion':  'Holy Communion / ቅዱስ ቁርባን',
-    'svc-charity':    'Charity / ምጽዋት',
-    'svc-matrimony':  'Matrimony / ጋብቻ',
-    'svc-wake':       'Wake Service / ሲዐት',
+    'svc-baptism':    'Baptism',
+    'svc-confession': 'Confession',
+    'svc-communion':  'Holy Communion',
+    'svc-charity':    'Charity',
+    'svc-matrimony':  'Matrimony',
+    'svc-wake':       'Wake Service',
     // SERMONS
     'sermons-tag':    'Listen & Learn',
     'sermons-title':  'Recent Sermons',
@@ -159,24 +161,23 @@ const translations = {
     // CONTACT
     'contact-tag':    'Reach Out',
     'contact-title':  'Get in Touch',
-    // CONTACT FORM LABELS
-'lbl-fname':   'First Name',
-'lbl-lname':   'Last Name',
-'lbl-email':   'Email',
-'lbl-subject': 'Subject',
-'lbl-message': 'Message',
-'lbl-send':    'Send Message',
-
-'opt-general':  'General Inquiry',
-'opt-prayer':   'Prayer Request',
-'opt-visit':    'Plan a visit',
-'opt-baptism':  'Baptism',
-'opt-matrimony':'Matrimony',
-'opt-wake':     'Wake Service',
-
+    // CONTACT FORM
+    'lbl-fname':      'First Name',
+    'lbl-lname':      'Last Name',
+    'lbl-email':      'Email',
+    'lbl-subject':    'Subject',
+    'lbl-message':    'Message',
+    'lbl-send':       'Send Message',
+    // SELECT OPTIONS
+    'opt-general':    'General Inquiry',
+    'opt-prayer':     'Prayer Request',
+    'opt-visit':      'Plan a visit',
+    'opt-baptism':    'Baptism',
+    'opt-matrimony':  'Matrimony',
+    'opt-wake':       'Wake Service'
   },
 
-
+  // ==================== AMHARIC ====================
   am: {
     // HERO
     'txt-tag':        'የእምነት ቤት',
@@ -219,27 +220,22 @@ const translations = {
     'give-title':     'ለቤተክርስቲያን ስጡ',
     // CONTACT
     'contact-tag':    'ያናግሩን',
-    'contact-title': 'እናናግርህ',
-// CONTACT FORM LABELS
-'lbl-fname':   'ስም',
-'lbl-lname':   'የአባት ስም',
-'lbl-email':   'ኢሜይል',
-'lbl-subject': 'ርዕስ',
-'lbl-message': 'መልዕክት',
-'lbl-send':    'ላክ',
-
-'opt-general':   'ጠቅላላ ጥያቄ',
-'opt-prayer':    'የጸሎት ጥያቄ',
-'opt-visit':     'ሊጠይቁን',
-'opt-baptism':   'ጥምቀት',
-'opt-matrimony': 'ጋብቻ',
-'opt-wake':      'ሲዐት',
-
-
-},        // ← en ይዘጋል
-
-  
-   
+    'contact-title':  'እናናግርህ',
+    // CONTACT FORM
+    'lbl-fname':      'ስም',
+    'lbl-lname':      'የአባት ስም',
+    'lbl-email':      'ኢሜይል',
+    'lbl-subject':    'ርዕስ',
+    'lbl-message':    'መልዕክት',
+    'lbl-send':       'ላክ',
+    // SELECT OPTIONS
+    'opt-general':    'ጠቅላላ ጥያቄ',
+    'opt-prayer':     'የጸሎት ጥያቄ',
+    'opt-visit':      'ሊጠይቁን',
+    'opt-baptism':    'ጥምቀት',
+    'opt-matrimony':  'ጋብቻ',
+    'opt-wake':       'ሲዐት'
+  }
 
 };
 
