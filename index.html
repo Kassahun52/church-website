@@ -17,8 +17,8 @@
           <img src="images/cross.jpg" alt="Logo"
                style="width:36px;height:36px;border-radius:50%;object-fit:cover">
           <div>
-            <div class="logo-text">Deber Genete St, Mary</div>
-            <div class="logo-subtitle">Orthodox Tewahedo Church</div>
+            <div class="logo-text" id="logo-text">Deber Genete St, Mary</div>
+            <div class="logo-subtitle" id="logo-subtitle">Orthodox Tewahedo Church</div>
           </div>
         </div>
 
@@ -58,7 +58,7 @@
     <section class="hero" id="home" style="background-image: url('images/church-building.jpg'); background-size: cover; background-position:center ;">
       <div class="hero-content">
         <p class="hero-tag" id="txt-tag">House of Faith</p>
-        <h1>Welcome to <br>
+        <h1 id="txt-welcome">Welcome to <br>
           <span class="gold-text" id="txt-title">
             Deber Genete St, Mary Orthodox Tewahedo church
           </span>
@@ -81,13 +81,13 @@
         <h2 class="section-title" id="about-title">Our Story & Mission</h2>
        
         <div class="gold-line"></div>
-        <p class="about-text">
+        <p class="about-text" id="about-text">
          St Mary's Ethiopian OrthodoxTewahedo Church Strives to fulfill the spirtual needs of its members by providing church and related services in a manner consistent with the Ethiopian Orthodox Tewahedo church's faith, values and tradition.
         </p>
         <div class="stats-row">
-          <div class="stat"><h3>200+</h3><p>Members</p></div>
-          <div class="stat"><h3>12</h3><p>Ministries</p></div>
-          <div class="stat"><h3>34+</h3><p>Years</p></div>
+          <div class="stat"><h3>200+</h3><p id="stat-members">Members</p></div>
+          <div class="stat"><h3>12</h3><p id="stat-ministries">Ministries</p></div>
+          <div class="stat"><h3>34+</h3><p id="stat-years">Years</p></div>
         </div>
       </div>
     </section>
@@ -100,7 +100,7 @@
         <h2 class="section-title" id="service-title">Our Services</h2>
         <div class="gold-line"></div>
 
-        <p class="about-text">
+        <p class="about-text" id="service-desc">
           Established in 1992, the St, Mary's Ethiopian Orthodox Church has been serving the Tampa Bay community and surr cities for over 34 Years Services include Sunday School, religious counseling, marriage, burial rites(Fitat), baptism, visiting and conforming the sick.
         </p>
 
@@ -114,10 +114,10 @@
             </div>
             <div class="service-content">
               <h3 id="svc-baptism">Baptism / ጥምቀት</h3>
-              <p>Sacrament of Christian initiation through water and the Holy Spirit.
+              <p id="svc-baptism-desc">Sacrament of Christian initiation through water and the Holy Spirit.
                  "Go ye therefore, and teach all nations, baptizing them in the name
                  of the Father, and of the Son, and of the Holy Ghost." — Matthew 28:19</p>
-              <a href="" target="_blank" class="btn btn-gold btn-sm">Book Appointment</a>
+              <a href="" target="_blank" class="btn btn-gold btn-sm" id="svc-baptism-btn">Book Appointment</a>
             </div>
           </div>
 
@@ -129,9 +129,9 @@
             </div>
             <div class="service-content">
               <h3 id="svc-confession">Confession / ኑዛዜ</h3>
-              <p>The sacrament of reconciliation — confess your sins and receive
+              <p id="svc-confession-desc">The sacrament of reconciliation — confess your sins and receive
                  absolution and peace of soul. Available by appointment with our priests.</p>
-              <a href="#contact" class="btn btn-gold btn-sm">Book Appointment</a>
+              <a href="#contact" class="btn btn-gold btn-sm" id="svc-confession-btn">Book Appointment</a>
             </div>
           </div>
 
@@ -143,9 +143,9 @@
             </div>
             <div class="service-content">
               <h3 id="svc-communion">Holy Communion / ቅዱስ ቁርባን</h3>
-              <p>Receiving the body and blood of Christ — the central act of worship.
+              <p id="svc-communion-desc">Receiving the body and blood of Christ — the central act of worship.
                  Every Sunday at 9:00 AM and 11:00 AM services.</p>
-              <a href="#contact" class="btn btn-gold btn-sm">Learn More</a>
+              <a href="#contact" class="btn btn-gold btn-sm" id="svc-communion-btn">Learn More</a>
             </div>
           </div>
 
@@ -157,9 +157,9 @@
             </div>
             <div class="service-content">
               <h3 id="svc-charity">Charity / ምጽዋት</h3>
-              <p>Community support — food, medical, education, and emergency assistance
+              <p id="svc-charity-desc">Community support — food, medical, education, and emergency assistance
                  for those in need in our community and beyond.</p>
-              <a href="#contact" class="btn btn-gold btn-sm">Get Help</a>
+              <a href="#contact" class="btn btn-gold btn-sm" id="svc-charity-btn">Get Help</a>
             </div>
           </div>
 
@@ -171,9 +171,9 @@
             </div>
             <div class="service-content">
               <h3 id="svc-matrimony">Matrimony / ጋብቻ</h3>
-              <p>The holy sacrament of Christian marriage — blessed and witnessed
+              <p id="svc-matrimony-desc">The holy sacrament of Christian marriage — blessed and witnessed
                  by the Church. Pre-marital counseling required. Apply 3 months in advance.</p>
-              <a href="#contact" class="btn btn-gold btn-sm">Book Appointment</a>
+              <a href="#contact" class="btn btn-gold btn-sm" id="svc-matrimony-btn">Book Appointment</a>
             </div>
           </div>
 
@@ -185,9 +185,9 @@
             </div>
             <div class="service-content">
               <h3 id="svc-wake">Wake Service / ሲዐት</h3>
-              <p>Funeral and wake arrangements — honouring the departed with prayer
+              <p id="svc-wake-desc">Funeral and wake arrangements — honouring the departed with prayer
                  and ceremony. We are available 7 days a week for families in need.</p>
-              <a href="#contact" class="btn btn-gold btn-sm">Contact Us</a>
+              <a href="#contact" class="btn btn-gold btn-sm" id="svc-wake-btn">Contact Us</a>
             </div>
           </div>
 
@@ -230,8 +230,8 @@
           <div class="sermon-card" data-cat="prayer">
             <div class="sermon-thumb">▶</div>
             <div class="sermon-info">
-              <h3>The Power of a Praying Community</h3>
-              <p>Why prayer together changes everything.</p>
+              <h3 id="sr2-title">The Power of a Praying Community</h3>
+              <p sr2-desc>Why prayer together changes everything.</p>
               <span class="sermon-tag">Prayer · March 30, 2025</span>
             </div>
             <button class="play-btn"
@@ -241,8 +241,8 @@
           <div class="sermon-card" data-cat="family">
             <div class="sermon-thumb">▶</div>
             <div class="sermon-info">
-              <h3>Building a Christ-Centered Home</h3>
-              <p>Practical wisdom for families today.</p>
+              <h3 id="sr3-title">Building a Christ-Centered Home</h3>
+              <p id="sr3-desc">Practical wisdom for families today.</p>
               <span class="sermon-tag">Family · March 23, 2025</span>
             </div>
             <button class="play-btn"
@@ -252,8 +252,8 @@
           <div class="sermon-card" data-cat="faith">
             <div class="sermon-thumb">▶</div>
             <div class="sermon-info">
-              <h3>Amazing Grace: More Than a Song</h3>
-              <p>Understanding the depth of God's grace.</p>
+              <h3 id="sr4-title">Amazing Grace: More Than a Song</h3>
+              <p sr4-desc>Understanding the depth of God's grace.</p>
               <span class="sermon-tag">Faith · March 16, 2025</span>
             </div>
             <button class="play-btn"
@@ -271,7 +271,7 @@
         <h2 class="section-title" id="events-title">Events & Gatherings</h2>
         <div class="gold-line"></div>
 
-        <!-- ✅ FIX 3: Events closing divs ተስተካክለዋል -->
+      
         <div class="events-grid">
 
           <div class="event-card">
@@ -280,9 +280,9 @@
               <span class="date-month">Apr</span>
             </div>
             <div class="event-info">
-              <h3>Easter Sunday Celebration</h3>
-              <p>Special service celebrating the resurrection of Jesus Christ.</p>
-              <span class="event-time">🕘 8:30 PM & 2:00 AM</span>
+              <h3 id="ev1-title">Easter Sunday Celebration</h3>
+              <p id="ev1-desc">Special service celebrating the resurrection of Jesus Christ.</p>
+              <span class="event-time" id="ev1-time">🕘 8:30 PM & 2:00 AM</span>
             </div>
           </div>
 
@@ -292,9 +292,9 @@
               <span class="date-month">Apr</span>
             </div>
             <div class="event-info">
-              <h3>Community Outreach Day</h3>
-              <p>Serving our city - food, prayer, and practical help for those in need.</p>
-              <span class="event-time">🕗 8:00 AM - 1:00 PM</span>
+              <h3 id="ev2-title">Community Outreach Day</h3>
+              <p id="ev2-desc">Serving our city - food, prayer, and practical help for those in need.</p>
+              <span class="event-time" id="ev2-time">🕗 8:00 AM - 1:00 PM</span>
             </div>
           </div>
 
@@ -304,9 +304,9 @@
               <span class="date-month">May</span>
             </div>
             <div class="event-info">
-              <h3>Youth Morning</h3>
-              <p>Worship, games, and fellowship for teens and young adults.</p>
-              <span class="event-time">🕕 8:00 AM - 12:00 PM</span>
+              <h3 id="ev3-title">Youth Morning</h3>
+              <p id="ev3-desc">Worship, games, and fellowship for teens and young adults.</p>
+              <span class="event-time" id="ev3-time">🕕 8:00 AM - 12:00 PM</span>
             </div>
           </div>
 
@@ -320,7 +320,7 @@
         <span class="section-tag" id="give-tag">Generosity</span>
         <h2 class="section-title" id="give-title">Give to the Church</h2>
         <div class="gold-line"></div>
-        <p class="give-desc">
+        <p class="give-desc" id="give-desc">
           Your generosity supports our mission.
           Choose your preferred giving method below.
         </p>
@@ -329,50 +329,50 @@
 
           <div class="give-method-card">
             <div class="give-icon">🅿️</div>
-            <h3>PayPal</h3>
-            <p>Give securely online using your PayPal account or card.</p>
-            <a href="https://paypal.me/tampamariam" target="_blank" class="btn btn-gold">
+            <h3 id="give-paypal">PayPal</h3>
+            <p id="give-paypal-desc">Give securely online using your PayPal account or card.</p>
+            <a href="https://paypal.me/tampamariam" target="_blank" class="btn btn-gold" id="give-paypal-btn">
               Donate via PayPal
             </a>
           </div>
 
           <div class="give-method-card">
             <div class="give-icon">💚</div>
-            <h3>Cash App</h3>
-            <p>Send your donation directly through Cash App.</p>
+            <h3 id="give-cashapp">Cash App</h3>
+            <p id="give-cashapp-desc">Send your donation directly through Cash App.</p>
             <div class="give-info-box">$<span id="cashapp-tag">tampamariam</span></div>
-            <button class="btn btn-gold" onclick="copyText('cashapp-tag')">Copy $Cashtag</button>
+            <button class="btn btn-gold" onclick="copyText('cashapp-tag')" id="give-cashapp-btn">Copy $Cashtag</button>
           </div>
 
           <div class="give-method-card">
             <div class="give-icon">💜</div>
-            <h3>Zelle</h3>
-            <p>Fast and free bank transfer using Zelle.</p>
+            <h3 id="give-zelle">Zelle</h3>
+            <p id="give-zelle-desc">Fast and free bank transfer using Zelle.</p>
             <div class="give-info-box"><span id="zelle-info">(813) 626-6042</span></div>
-            <button class="btn btn-gold" onclick="copyText('zelle-info')">Copy Number</button>
+            <button class="btn btn-gold" onclick="copyText('zelle-info')" id="give-zelle-btn">Copy Number</button>
           </div>
 
           <div class="give-method-card">
             <div class="give-icon">📝</div>
-            <h3>Check</h3>
-            <p>Mail your check payable to Deber Genete St Mary Church.</p>
+            <h3 id="check">Check</h3>
+            <p id="give-check-desc">Mail your check payable to Deber Genete St Mary Church.</p>
             <div class="give-info-box">2418 South 86th St<br>Tampa, FL 33619</div>
           </div>
 
           <div class="give-method-card">
             <div class="give-icon">💳</div>
-            <h3>Debit / Credit Card</h3>
-            <p>Give using your debit or credit card securely online.</p>
-            <a href="https://paypal.me/tampamariam" target="_blank" class="btn btn-gold">
+            <h3 id="give-card">Debit / Credit Card</h3>
+            <p id="give-card-desc">Give using your debit or credit card securely online.</p>
+            <a href="https://paypal.me/tampamariam" target="_blank" class="btn btn-gold" id="give-card-btn">
               Pay by Card
             </a>
           </div>
 
           <div class="give-method-card">
             <div class="give-icon">🙏</div>
-            <h3>In Person</h3>
-            <p>Give during our Sunday service or visit the church office.</p>
-            <div class="give-info-box">Sunday: 9:00 AM & 11:00 AM</div>
+            <h3 id="give-inperson">In Person</h3>
+            <p id="give-inperson-desc">Give during our Sunday service or visit the church office.</p>
+            <div class="give-info-box" id="give-inperson-time">Sunday: 9:00 AM & 11:00 AM</div>
           </div>
 
         </div>
@@ -391,24 +391,27 @@
           <div class="contact-info">
             <div class="info-item">
               <span class="info-icon">📍</span>
-              <div><h4>Address</h4><p>2418 South 86th St<br>Tampa, FL 33619</p></div>
+              <div>
+              <h4 id="contact-address">Address</h4>
+              <p>2418 South 86th St<br>Tampa, FL 33619</p>
+            </div>
             </div>
             <div class="info-item">
               <span class="info-icon">📞</span>
-              <div><h4>Phone</h4>
+              <div><h4 id="contact-phone">Phone</h4>
                 <p>+1(813) 626-6042</p>
                 <p>+1(813) 679-4982</p>
               </div>
             </div>
             <div class="info-item">
               <span class="info-icon">✉️</span>
-              <div><h4>Email</h4><p>info@yourchurch.org</p></div>
+              <div><h4 id="contact-email">Email</h4><p>info@yourchurch.org</p></div>
             </div>
             <div class="info-item">
               <span class="info-icon">🕐</span>
               <div>
-                <h4>Service Hours</h4>
-                <p>Sunday: 5:00 AM & 11:00 AM<br>
+                <h4 id="contact-hours-title">Service Hours</h4>
+                <p id="contact-hours-desc">Sunday: 5:00 AM & 11:00 AM<br>
                    Full service with kedase<br>
                    The day of Month 12, 21, 23, 27<br>
                    Kidan Tselot with Tsebele</p>
@@ -463,7 +466,7 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <!-- ✅ FIX 4: Footer extra closing div ተሰረዘ -->
+    
     <footer class="footer">
       <div class="container">
 
@@ -471,8 +474,8 @@
           <div class="footer-brand">
             <span class="logo-cross">+</span>
           </div>
-          <p class="footer-church-name">Deber Genete St, Mary Orthodox Tewahedo Church</p>
-          <p class="footer-tagline">Faith . Hope . Love . Community</p>
+          <p class="footer-church-name" id="footer-church-name">Deber Genete St, Mary Orthodox Tewahedo Church</p>
+          <p class="footer-tagline" id="footer-tagline">Faith . Hope . Love . Community</p>
         </div>
 
         <div class="footer-social">
@@ -483,12 +486,12 @@
         </div>
 
         <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#events">Events</a>
-          <a href="#give">Give</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" id="footer-home">Home</a>
+          <a href="#about" id="footer-about">About</a>
+          <a href="#services" id="footer-services">Services</a>
+          <a href="#events " id="footer-events">Events</a>
+          <a href="#give" id="footer-give">Give</a>
+          <a href="#contact" id="footer-contact">Contact</a>
         </div>
 
         <div class="footer-bottom">
