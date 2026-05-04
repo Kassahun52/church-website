@@ -467,3 +467,146 @@ function setLang(lang) {
   }
   document.getElementById('lang-menu').classList.remove('open');
 }
+
+
+// ===== ETHIOPIAN CALENDAR =====
+const ethMonths = [
+  'መስከረም', 'ጥቅምት', 'ኅዳር', 'ታኅሳስ', 'ጥር', 'የካቲት',
+  'መጋቢት', 'ሚያዝያ', 'ግንቦት', 'ሰኔ', 'ሐምሌ', 'ነሐሴ', 'ጳጉሜ'
+];
+
+const ethDays = ['ሰ', 'ማ', 'ረ', 'ሐ', 'ዓ', 'ቅ', 'እ'];
+
+const holidays = {
+  '1-1':  ['ቅዱስ ዮሃንስ / St. John'],
+  '1-17': ['መስቀል / Finding of the True Cross'],
+  '3-15': ['ጾሙ ነቢያት / Fast of the Prophets'],
+  '4-29': ['ልደት / Christmas'],
+  '5-11': ['ጥምቀት / Epiphany'],
+  '5-25': ['ጾሙ ነነዌ / Fast of Nineveh'],
+  '6-9':  ['ዓቢይ ጾም / Great Lent begins'],
+  '7-6':  ['ደብረ ዘይት / Debre Zeitun'],
+  '7-27': ['ሆሳዕና / Palm Sunday'],
+  '8-2':  ['ስቅለት / Good Friday'],
+  '8-4':  ['ትንሣኤ / Easter'],
+  '8-28': ['ርክበ ካህናት / Priests Meeting'],
+  '9-1':  ['ግንቦት ልደታ / Birth of Mary'],
+  '9-13': ['ዕርገት / Ascension'],
+  '9-23': ['ጸራቀልሞስ'],
+  '9-24': ['ጾሙ ሐዋርያት / Apostles Fast'],
+  '9-26': ['ጾሙ ድኅነት / Fast of Salvation'],
+  '12-1': ['ጾሙ ፍልሰታ / Fast of Assumption'],
+  '12-13':['ደብረ ታቦር / Transfiguration'],
+  '12-16':['የእመቤታችን ዕርገት / Assumption of Mary'],
+};
+
+let currentEthMonth = 1;
+let currentEthYear = 2018;
+
+function renderCalendar() {
+  const grid = document.getElementById('calendar-grid');
+  const title = document.getElementById('cal-month-title');
+  const eventsDiv = document.getElementById('calendar-events');
+
+  if (!grid) return;
+
+  title.textContent = `${ethMonths[currentEthMonth - 1]} ${currentEthYear}`;
+
+  let html = ethDays.map(d =>
+    `<div class="cal-day-header">${d}</div>`
+  ).join('');
+
+  function getEthStartDay(month, year) {
+  const totalDays = (year - 2008) * 365 + (month - 1) * 30;
+  return totalDays % 7;
+}
+
+  const daysInMonth = currentEthMonth === 13 ? 5 : 30;
+  const startDay = getEthStartDay(currentEthMonth, currentEthYear);
+
+  for (let i = 0; i < startDay; i++) {
+    html += `<div class="cal-day empty"></div>`;
+  }
+
+ for (let d = 1; d <= daysInMonth; d++) {
+    const key = `${currentEthMonth}-${d}`;
+    const hasEvent = holidays[key];
+    const greg = ethToGreg(currentEthMonth, d, currentEthYear);
+
+  html += `
+      <div class="cal-day ${hasEvent ? 'has-event' : ''}"
+           ${hasEvent ? `onclick="showEvent('${currentEthMonth}-${d}')"` : ''}>
+        <span style="font-weight:bold;display:block;font-size:0.9rem;color:white">${d}</span>
+        <span style="font-size:0.65rem;display:block;color:#aaa;margin-top:2px">${greg}</span>
+      </div>`;
+  }
+
+  grid.innerHTML = html;
+  eventsDiv.innerHTML = '<h4>👆 ቀኑን ጠቅ ያድርጉ በዓሉን ለማየት</h4>';
+}
+
+function showEvent(key) {
+  const eventsDiv = document.getElementById('calendar-events');
+  const parts = key.split('-');
+  const month = parseInt(parts[0]);
+  const day = parts[1];
+  const events = holidays[key];
+  
+  if (eventsDiv) {
+    if (events) {
+      eventsDiv.innerHTML = `
+        <h4>🗓 ${ethMonths[month - 1]} ${day}</h4>
+        ${events.map(e => 
+          `<div class="event-item-cal">🕊 ${e}</div>`
+        ).join('')}
+      `;
+    } else {
+      eventsDiv.innerHTML = `<h4>በዚህ ቀን በዓል የለም</h4>`;
+    }
+    eventsDiv.scrollIntoView({behavior: 'smooth'});
+  }
+}
+
+function prevMonth() {
+  currentEthMonth--;
+  if (currentEthMonth < 1) {
+    currentEthMonth = 13;
+    currentEthYear--;
+  }
+  renderCalendar();
+}
+
+function nextMonth() {
+  currentEthMonth++;
+  if (currentEthMonth > 13) {
+    currentEthMonth = 1;
+    currentEthYear++;
+  }
+  renderCalendar();
+}
+
+// Initialize
+renderCalendar();
+
+function ethToGreg(month, day, year) {
+  const offsets = [
+    10, 10, 10, 10, 10, 10,
+    10, 10, 10, 10, 10, 10, 10
+  ];
+  
+  const gregMonthNames = [
+    'Sep','Oct','Nov','Dec','Jan','Feb',
+    'Mar','Apr','May','Jun','Jul','Aug','Sep'
+  ];
+  
+  let gregDay = day + offsets[month - 1];
+  let gregMonth = gregMonthNames[month - 1];
+  
+  if (gregDay > 30) {
+    gregDay = gregDay - 30;
+    const idx = gregMonthNames.indexOf(gregMonth);
+    gregMonth = gregMonthNames[idx + 1] || 'Sep';
+  }
+  
+  return `${gregMonth} ${gregDay}`;
+}

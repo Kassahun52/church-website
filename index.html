@@ -146,7 +146,9 @@
               <h3 id="svc-communion">Holy Communion / ቅዱስ ቁርባን</h3>
               <p id="svc-communion-desc">Receiving the body and blood of Christ — the central act of worship.
                  Every Sunday at 9:00 AM and 11:00 AM services.</p>
-              <a href="#contact" class="btn btn-gold btn-sm" id="svc-communion-btn">Learn More</a>
+
+                  <a href="https://www.ethiopianorthodox.org/amharic/mystery/pdfs/holycommunion.pdf" target="_blank" class="btn btn-gold btn-sm" id="svc-wake-btn">Learn More</a> 
+              <!-- <a href="#contact" class="btn btn-gold btn-sm" id="svc-communion-btn">Learn More</a> -->
             </div>
           </div>
 
@@ -187,7 +189,7 @@
               <div class="service-img-placeholder">🕯️</div>
             </div>
             <div class="service-content">
-              <h3 id="svc-wake">Wake Service / ሲዐት</h3>
+              <h3 id="svc-wake">Wake Service / ፍትሐት</h3>
               <p id="svc-wake-desc">Funeral and wake arrangements — honouring the departed with prayer
                  and ceremony. We are available 7 days a week for families in need.</p>
              <a href="https://docs.google.com/forms/d/e/1FAIpQLScudZsRYFCTpJ1K3Ib4TQkhe8UHK31wY0OB-Uzwiiyo8uF8bA/viewform?usp=dialog" target="_blank" class="btn btn-gold btn-sm" id="svc-wake-btn">Contact Us</a>
@@ -279,54 +281,23 @@
     </section>
 
     <!-- ===== EVENTS ===== -->
-    <section class="events" id="events">
-      <div class="container">
-        <span class="section-tag" id="events-tag">Upcoming</span>
-        <h2 class="section-title" id="events-title">Events & Gatherings</h2>
-        <div class="gold-line"></div>
+    <!-- ===== EVENTS / CALENDAR ===== -->
+<section class="events" id="events">
+  <div class="container">
+    <span class="section-tag" id="events-tag">Upcoming</span>
+    <h2 class="section-title" id="events-title">Events & Gatherings</h2>
+    <div class="gold-line"></div>
 
-      
-        <div class="events-grid">
+    <div class="calendar-nav">
+      <button onclick="prevMonth()">&#8592;</button>
+      <h3 id="cal-month-title"></h3>
+      <button onclick="nextMonth()">&#8594;</button>
+    </div>
 
-          <div class="event-card">
-            <div class="event-date">
-              <span class="date-day">20</span>
-              <span class="date-month">Apr</span>
-            </div>
-            <div class="event-info">
-              <h3 id="ev1-title">Easter Sunday Celebration</h3>
-              <p id="ev1-desc">Special service celebrating the resurrection of Jesus Christ.</p>
-              <span class="event-time" id="ev1-time">🕘 8:30 PM & 2:00 AM</span>
-            </div>
-          </div>
-
-          <div class="event-card">
-            <div class="event-date">
-              <span class="date-day">27</span>
-              <span class="date-month">Apr</span>
-            </div>
-            <div class="event-info">
-              <h3 id="ev2-title">Community Outreach Day</h3>
-              <p id="ev2-desc">Serving our city - food, prayer, and practical help for those in need.</p>
-              <span class="event-time" id="ev2-time">🕗 8:00 AM - 1:00 PM</span>
-            </div>
-          </div>
-
-          <div class="event-card">
-            <div class="event-date">
-              <span class="date-day">3</span>
-              <span class="date-month">May</span>
-            </div>
-            <div class="event-info">
-              <h3 id="ev3-title">Youth Morning</h3>
-              <p id="ev3-desc">Worship, games, and fellowship for teens and young adults.</p>
-              <span class="event-time" id="ev3-time">🕕 8:00 AM - 12:00 PM</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <div class="calendar-grid" id="calendar-grid"></div>
+    <div class="calendar-events" id="calendar-events"></div>
+  </div>
+</section>
 
     <!-- ===== GIVE ===== -->
     <section class="give" id="give">
