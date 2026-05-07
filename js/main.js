@@ -397,7 +397,7 @@ const translations = {
     'opt-visit':     'ለመጎብኘት',
     'opt-baptism':   'ጥምቀት',
     'opt-matrimony': 'ጋብቻ',
-    'opt-wake':      'ሲዐት',
+    'opt-wake':      'ፍትሐት',
     'contact-address': 'አድራሻ',
     'contact-phone':   'ስልክ',
     'contact-email':   'ኢሜይል',
@@ -477,32 +477,166 @@ const ethMonths = [
 
 const ethDays = ['ሰ', 'ማ', 'ረ', 'ሐ', 'ዓ', 'ቅ', 'እ'];
 
-const holidays = {
-  '1-1':  ['ቅዱስ ዮሃንስ / St. John'],
+// ===== ቋሚ በዓላት =====
+const fixedHolidays = {
+  '1-1':  ['ቅዱስ ዮሐንስ / St. John'],
   '1-17': ['መስቀል / Finding of the True Cross'],
   '3-15': ['ጾሙ ነቢያት / Fast of the Prophets'],
+  '3-21': ['ጽዮን ማርያም ታቦት ንግሥ / Zion Mary Tabot Coronation'],
   '4-29': ['ልደት / Christmas'],
   '5-11': ['ጥምቀት / Epiphany'],
-  '5-25': ['ጾሙ ነነዌ / Fast of Nineveh'],
-  '6-9':  ['ዓቢይ ጾም / Great Lent begins'],
-  '7-6':  ['ደብረ ዘይት / Debre Zeitun'],
-  '7-27': ['ሆሳዕና / Palm Sunday'],
-  '8-2':  ['ስቅለት / Good Friday'],
-  '8-4':  ['ትንሣኤ / Easter'],
-  '8-28': ['ርክበ ካህናት / Priests Meeting'],
+  // '8-23': ['የቅዱስ ጊዮርጊስ ሰማዕትነት መታሰቢያ / St. George Martyrdom'],
   '9-1':  ['ግንቦት ልደታ / Birth of Mary'],
-  '9-13': ['ዕርገት / Ascension'],
-  '9-23': ['ጸራቀልሞስ'],
-  '9-24': ['ጾሙ ሐዋርያት / Apostles Fast'],
-  '9-26': ['ጾሙ ድኅነት / Fast of Salvation'],
   '12-1': ['ጾሙ ፍልሰታ / Fast of Assumption'],
   '12-13':['ደብረ ታቦር / Transfiguration'],
-  '12-16':['የእመቤታችን ዕርገት / Assumption of Mary'],
+  // '12-16':['የእመቤታችን ዕርገት / Assumption of Mary'],
 };
+
+// ===== ዲሜጥሮስ ቀመር — ትንሣኤ Lookup Table =====
+// a = ethYear % 19  ✅ ከTewahedo App (2013-2027) የተረጋገጠ
+const easterDayInMiyazia = [
+  16,  8, 27, 12,  4, 24,  8, 30, 20,  5,
+  24, 16,  1, 21, 10, 29, 16,  5, 24
+];
 
 let currentEthMonth = 1;
 let currentEthYear = 2018;
 
+// ===== የኢትዮጵያ ቀን ወደ Absolute Day =====
+function ethToAbsDay(month, day, year) {
+  let total = (year - 1) * 365 + Math.floor((year - 1) / 4);
+  total += (month - 1) * 30 + day;
+  return total;
+}
+
+// ===== Absolute Day ወደ የኢትዮጵያ ቀን =====
+function absDayToEth(absDay) {
+  let year = Math.floor(absDay / 365.25) + 1;
+  while (ethToAbsDay(1, 1, year + 1) <= absDay) year++;
+  while (ethToAbsDay(1, 1, year) > absDay) year--;
+  const dayOfYear = absDay - ethToAbsDay(1, 1, year) + 1;
+  const month = Math.min(13, Math.ceil(dayOfYear / 30));
+  const day = dayOfYear - (month - 1) * 30;
+  return { month, day, year };
+}
+
+// ===== ትንሣኤ ቀን ማስላት =====
+function getEthEaster(ethYear) {
+  const a = ethYear % 19;
+  const day = easterDayInMiyazia[a];
+  if (day > 30) return { month: 9, day: day - 30, year: ethYear };
+  return { month: 8, day: day, year: ethYear };
+}
+
+// ===== Moveable Feasts =====
+function getMoveableHolidays(ethYear) {
+  const easter = getEthEaster(ethYear);
+  const easterAbs = ethToAbsDay(easter.month, easter.day, easter.year);
+
+  const feasts = [
+    { offset: -69, name: 'ጾሙ ነነዌ / Fast of Nineveh' },
+    { offset: -55, name: 'ዓቢይ ጾም / Great Lent begins' },
+    { offset: -28, name: 'ደብረ ዘይት / Debre Zeitun' },
+    { offset:  -7, name: 'ሆሳዕና / Palm Sunday' },
+    { offset:  -2, name: 'ስቅለት / Good Friday' },
+    { offset:   0, name: 'ትንሣኤ / Easter' },
+    { offset: +24, name: 'ርክበ ካህናት / Priests Meeting' },
+    { offset: +39, name: 'ዕርገት / Ascension' },
+    { offset: +49, name: 'ጰራቅሊጦስ / Pentecost' },
+    { offset: +50, name: 'ጾሙ ሐዋርያት / Apostles Fast begins' },
+    { offset: +52, name: 'ጾሙ ድኅነት / Fast of Salvation' },
+  ];
+
+  const result = {};
+  for (const feast of feasts) {
+    const d = absDayToEth(easterAbs + feast.offset);
+    const key = `${d.month}-${d.day}`;
+    if (!result[key]) result[key] = [];
+    result[key].push(feast.name);
+  }
+  return result;
+}
+
+// ===== ሁሉም Holidays =====
+function getHolidays(ethYear) {
+  const moveable = getMoveableHolidays(ethYear);
+  const all = { ...fixedHolidays };
+  for (const key in moveable) {
+    if (!all[key]) all[key] = [];
+    all[key] = [...all[key], ...moveable[key]];
+  }
+  return all;
+}
+
+// ===== getEthStartDay =====
+function getEthStartDay(month, year) {
+  const epoch = 2;
+  let totalDays = 0;
+  for (let y = 2000; y < year; y++) {
+    totalDays += 365;
+    if (y % 4 === 3) totalDays += 1;
+  }
+  totalDays += (month - 1) * 30;
+  return (epoch + totalDays) % 7;
+}
+
+// ===== ethToGreg — የባሕረ ሐሳብ ቀመር =====
+// ✅ ዘመነ ሉቃስ shift ቀመር:
+//   ወሮች 1-5 (Sep-Jan): ባለፈው አመት ዘመነ ሉቃስ ከሆነ +1
+//   ወር 6 (Feb): Gregorian leap year ከሆነ +1
+//   ወሮች 7-13 (Mar-Sep): shift አያስፈልግም
+function ethToGreg(month, day, year) {
+  const gregYear = month <= 4 ? year + 7 : year + 8;
+  const isGregLeap = (gregYear % 4 === 0 && gregYear % 100 !== 0) || gregYear % 400 === 0;
+
+  // ዘመነ ሉቃስ shift: ካለፈው አመት ጳጉሜ 6 ስለነበር፣ Sep-Jan +1
+  // ዘመነ ሉቃስ = (year-1) % 4 === 3
+  const prevLeap = (year - 1) % 4 === 3;
+  const lukaShift = prevLeap ? 1 : 0;
+
+  const gregStarts = [
+    { m: 'Sep', d: 11 + lukaShift }, // 1  - መስከረም ✅
+    { m: 'Oct', d: 11 + lukaShift }, // 2  - ጥቅምት  ✅
+    { m: 'Nov', d: 10 + lukaShift }, // 3  - ኅዳር    ✅
+    { m: 'Dec', d: 10 + lukaShift }, // 4  - ታኅሳስ   ✅
+    { m: 'Jan', d:  9 + lukaShift }, // 5  - ጥር     ✅
+    { m: 'Feb', d: isGregLeap ? 9 : 8 }, // 6 - የካቲት ✅
+    { m: 'Mar', d: 10 },             // 7  - መጋቢት
+    { m: 'Apr', d:  9 },             // 8  - ሚያዝያ
+    { m: 'May', d:  9 },             // 9  - ግንቦት
+    { m: 'Jun', d:  8 },             // 10 - ሰኔ
+    { m: 'Jul', d:  8 },             // 11 - ሐምሌ
+    { m: 'Aug', d:  7 },             // 12 - ነሐሴ
+    { m: 'Sep', d:  6 },             // 13 - ጳጉሜ
+  ];
+
+  const daysInGregMonth = {
+    'Jan': 31, 'Feb': isGregLeap ? 29 : 28, 'Mar': 31,
+    'Apr': 30, 'May': 31, 'Jun': 30,
+    'Jul': 31, 'Aug': 31, 'Sep': 30,
+    'Oct': 31, 'Nov': 30, 'Dec': 31
+  };
+
+  const gregMonthOrder = [
+    'Jan','Feb','Mar','Apr','May','Jun',
+    'Jul','Aug','Sep','Oct','Nov','Dec'
+  ];
+
+  const start = gregStarts[month - 1];
+  let gregDay = start.d + (day - 1);
+  let gregMonth = start.m;
+
+  const maxDays = daysInGregMonth[gregMonth];
+  if (gregDay > maxDays) {
+    gregDay = gregDay - maxDays;
+    const idx = gregMonthOrder.indexOf(gregMonth);
+    gregMonth = gregMonthOrder[(idx + 1) % 12];
+  }
+
+  return `${gregMonth} ${gregDay}`;
+}
+
+// ===== renderCalendar =====
 function renderCalendar() {
   const grid = document.getElementById('calendar-grid');
   const title = document.getElementById('cal-month-title');
@@ -512,30 +646,29 @@ function renderCalendar() {
 
   title.textContent = `${ethMonths[currentEthMonth - 1]} ${currentEthYear}`;
 
+  const holidays = getHolidays(currentEthYear);
+
   let html = ethDays.map(d =>
     `<div class="cal-day-header">${d}</div>`
   ).join('');
 
-  function getEthStartDay(month, year) {
-  const totalDays = (year - 2008) * 365 + (month - 1) * 30;
-  return totalDays % 7;
-}
-
-  const daysInMonth = currentEthMonth === 13 ? 5 : 30;
   const startDay = getEthStartDay(currentEthMonth, currentEthYear);
+
+  const isLeapYear = currentEthYear % 4 === 3;
+  const daysInMonth = currentEthMonth === 13 ? (isLeapYear ? 6 : 5) : 30;
 
   for (let i = 0; i < startDay; i++) {
     html += `<div class="cal-day empty"></div>`;
   }
 
- for (let d = 1; d <= daysInMonth; d++) {
+  for (let d = 1; d <= daysInMonth; d++) {
     const key = `${currentEthMonth}-${d}`;
     const hasEvent = holidays[key];
     const greg = ethToGreg(currentEthMonth, d, currentEthYear);
 
-  html += `
+    html += `
       <div class="cal-day ${hasEvent ? 'has-event' : ''}"
-           ${hasEvent ? `onclick="showEvent('${currentEthMonth}-${d}')"` : ''}>
+           ${hasEvent ? `onclick="showEvent('${currentEthMonth}-${d}', ${currentEthYear})"` : ''}>
         <span style="font-weight:bold;display:block;font-size:0.9rem;color:white">${d}</span>
         <span style="font-size:0.65rem;display:block;color:#aaa;margin-top:2px">${greg}</span>
       </div>`;
@@ -545,68 +678,43 @@ function renderCalendar() {
   eventsDiv.innerHTML = '<h4>👆 ቀኑን ጠቅ ያድርጉ በዓሉን ለማየት</h4>';
 }
 
-function showEvent(key) {
+// ===== showEvent =====
+function showEvent(key, year) {
   const eventsDiv = document.getElementById('calendar-events');
   const parts = key.split('-');
   const month = parseInt(parts[0]);
   const day = parts[1];
+
+  const holidays = getHolidays(year || currentEthYear);
   const events = holidays[key];
-  
+
   if (eventsDiv) {
     if (events) {
       eventsDiv.innerHTML = `
         <h4>🗓 ${ethMonths[month - 1]} ${day}</h4>
-        ${events.map(e => 
+        ${events.map(e =>
           `<div class="event-item-cal">🕊 ${e}</div>`
         ).join('')}
       `;
     } else {
       eventsDiv.innerHTML = `<h4>በዚህ ቀን በዓል የለም</h4>`;
     }
-    eventsDiv.scrollIntoView({behavior: 'smooth'});
+    eventsDiv.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
+// ===== prevMonth / nextMonth =====
 function prevMonth() {
   currentEthMonth--;
-  if (currentEthMonth < 1) {
-    currentEthMonth = 13;
-    currentEthYear--;
-  }
+  if (currentEthMonth < 1) { currentEthMonth = 13; currentEthYear--; }
   renderCalendar();
 }
 
 function nextMonth() {
   currentEthMonth++;
-  if (currentEthMonth > 13) {
-    currentEthMonth = 1;
-    currentEthYear++;
-  }
+  if (currentEthMonth > 13) { currentEthMonth = 1; currentEthYear++; }
   renderCalendar();
 }
 
-// Initialize
+// ===== Initialize =====
 renderCalendar();
-
-function ethToGreg(month, day, year) {
-  const offsets = [
-    10, 10, 10, 10, 10, 10,
-    10, 10, 10, 10, 10, 10, 10
-  ];
-  
-  const gregMonthNames = [
-    'Sep','Oct','Nov','Dec','Jan','Feb',
-    'Mar','Apr','May','Jun','Jul','Aug','Sep'
-  ];
-  
-  let gregDay = day + offsets[month - 1];
-  let gregMonth = gregMonthNames[month - 1];
-  
-  if (gregDay > 30) {
-    gregDay = gregDay - 30;
-    const idx = gregMonthNames.indexOf(gregMonth);
-    gregMonth = gregMonthNames[idx + 1] || 'Sep';
-  }
-  
-  return `${gregMonth} ${gregDay}`;
-}
