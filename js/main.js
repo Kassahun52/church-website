@@ -135,6 +135,7 @@ const translations = {
     'nav-sermons':    'Sermons',
     'nav-events':     'Events',
     'nav-give':       'Give',
+    'nav-register':   'Register',
     'nav-contact':    'Contact',
     // ABOUT
     'about-tag':      'Who We Are',
@@ -293,6 +294,7 @@ const translations = {
     'nav-sermons':    'ስብከቶች',
     'nav-events':     'ዝግጅቶች',
     'nav-give':       'ስጦታ',
+    'nav-register':   'ምዝገባ',
     'nav-contact':    'ያናግሩን',
     // ABOUT
     'about-tag':      'እነማን ነን',
@@ -416,7 +418,7 @@ const translations = {
     'opt-visit':      'ሊጠይቁን',
     'opt-baptism':    'ጥምቀት',
     'opt-matrimony':  'ጋብቻ',
-    'opt-wake':       'ሲዐት',
+    'opt-wake':       'ፍትሐት',
 
     // FOOTER
     'footer-tagline': 'እምነት . ተስፋ . ፍቅር . ማህበረሰብ',
