@@ -56,24 +56,126 @@
     </nav>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="home" style="background-image: url('images/church-building.jpg'); background-size: cover; background-position:center ;">
-      <div class="hero-content">
-        <p class="hero-tag" id="txt-tag">House of Faith</p>
-        <h1 id="txt-welcome">Welcome to <br>
-          <span class="gold-text" id="txt-title">
-            Deber Genete St, Mary Orthodox Tewahedo church
-          </span>
-        </h1>
-        <p class="hero-desc" id="text-desc">
-          A gathering place of faith, worship, and fellowship.
-          All are welcome - come as you are.
-        </p>
-        <div class="hero-buttons">
-          <a href="#services" class="btn btn-gold"    id="txt-btn1">Our Services</a>
-          <a href="#contact"  class="btn btn-outline" id="txt-btn2">Plan a visit</a>
-        </div>
+<section class="hero" id="home"
+         style="background-image:url('images/church-building.jpg');
+                background-size:cover;background-position:center;">
+  <div class="hero-content" style="display:flex; align-items:center; 
+              justify-content:space-between; gap:40px; flex-wrap:wrap;">
+    
+    <!-- ግራ — ጽሑፍ -->
+    <div style="flex:1; min-width:280px;">
+      <p class="hero-tag" id="txt-tag">House of Faith</p>
+      <h1 id="txt-welcome">Welcome to <br>
+        <span class="gold-text" id="txt-title">
+          Deber Genete St, Mary Orthodox Tewahedo church
+        </span>
+      </h1>
+      <p class="hero-desc" id="text-desc">
+        A gathering place of faith, worship, and fellowship.
+        All are welcome - come as you are.
+      </p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-gold" id="txt-btn1">Our Services</a>
+        <a href="#contact" class="btn btn-outline" id="txt-btn2">Plan a visit</a>
       </div>
-    </section>
+    </div>
+
+    <!-- ቀኝ — QR Code -->
+    <div style="text-align:center; flex-shrink:0;">
+      <img src="images/qr-code.png" alt="dgaamc.org QR Code"
+           style="width:180px; height:180px; border-radius:12px;
+                  border:4px solid #C9960C; background:#fff; padding:8px;">
+      <p style="color:#C9960C; font-size:13px; font-weight:600; margin-top:10px;">
+        ስልክዎን ቀርበው ስኩ
+      </p>
+      <p style="color:rgba(255,255,255,0.6); font-size:12px;">
+        dgaamc.org
+      </p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ===== SOCIAL BUTTONS + ANNOUNCEMENTS ===== -->
+
+   <section class="social-announce">
+    <div class="container">
+      <div class="sa-grid">
+
+      <!-- LEFT: Join us -->
+        <div sa-card>
+          <p class="sa-card-title">📱 ቡድኖቻችን ይቀላቀሉ / Join Us</p>
+          <div class="btn-row">
+
+            <!-- ✏️ WhatsApp: href ውስጥ ሊንኩን ይቀይሩ -->
+            <a class="s-btn wa" href="https://wa.me/grouplink"
+            target="_blank">
+              <sva width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.104.549 4.079 1.504 5.796L0 24l6.335-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.576 9.576 0 01-4.881-1.336l-.35-.208-3.76.88.916-3.648-.228-.374A9.555 9.555 0 012.4 12c0-5.293 4.307-9.6 9.6-9.6 5.294 0 9.6 4.307 9.6 9.6 0 5.294-4.306 9.6-9.6 9.6z"/>
+              </sva>
+                 WhatsApp ቡድን
+            </a> 
+
+             <!-- ✏️ Viber: href ውስጥ ቁጥሩን ይቀይሩ -->
+
+             <a class="s-btn vi" href="viber://chat?number=+18136266042" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.985 0C5.689 0 .676 4.907.676 10.985c0 3.21 1.356 6.104 3.543 8.148L3.1 23.5l4.56-1.187a11.27 11.27 0 004.325.852c6.296 0 11.309-4.907 11.309-10.985C23.294 4.907 18.281 0 11.985 0zm5.882 16.36c-.27.757-1.586 1.449-2.19 1.537-.556.082-1.26.116-2.033-.128-.468-.148-1.07-.348-1.84-.681-3.227-1.392-5.333-4.638-5.493-4.854-.16-.217-1.306-1.737-1.306-3.313 0-1.575.826-2.352 1.118-2.672.293-.32.638-.4.852-.4.214 0 .428.002.615.01.197.01.463-.074.724.554.27.646.917 2.232.997 2.394.08.16.133.348.026.56-.106.213-.16.347-.32.534-.16.187-.337.418-.48.562-.16.16-.327.333-.14.654.186.32.826 1.362 1.773 2.207 1.218 1.086 2.244 1.422 2.565 1.582.32.16.507.134.694-.08.186-.213.8-.933 1.013-1.253.213-.32.427-.267.72-.16.293.107 1.866.88 2.186 1.04.32.16.534.24.614.373.08.134.08.774-.186 1.53z"/>
+                </svg>
+                Viber ቡድን
+              </a>
+
+              <!-- ✏️ Telegram: href ውስጥ ቻናሉን ይቀይሩ -->
+              <a class="s-btn tg" href="https://t.me/yourchannel" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+                Telegram ቻናል
+              </a>
+
+              <!-- ✏️ YouTube Live: href ውስጥ ሊንኩን ይቀይሩ -->
+              <a class="s-btn live" href="https://youtube.com/@yourchannel/live" target="_blank">
+                <span class="dot"></span>
+                Live — ቅዳሴ በቀጥታ ይመልከቱ ▶
+              </a>
+          </div>
+        </div> 
+
+        <!-- RIGHT: Announcements -->
+          <div class="sa-card">
+            <p class="sa-card-title">📢 ማስታወቂያዎች / Announcements</p>
+            <div class="ann-list">
+
+              <!-- ✏️ ማስታወቂያ 1 — ይቀይሩ -->
+              <div class="ann-item">
+                <span class="ann-badge badge-new">አዲስ</span>
+                <p class="ann-date">ግንቦት ፲፩ ፳፻፲፮</p>
+                <p class="ann-title">የሰንበት ትምህርት ቤት ምዝገባ</p>
+                <p class="ann-body">ምዝገባ ተጀምሯል። ለተጨማሪ መረጃ WhatsApp ቡድናችንን ይቀላቀሉ።</p>
+              </div>
+
+              <!-- ✏️ ማስታወቂያ 2 — ይቀይሩ -->
+              <div class="ann-item">
+                <span class="ann-badge badge-feast">ክብረ በዓል</span>
+                <p class="ann-date">ሰኔ ፩ ፳፻፲፮</p>
+                <p class="ann-title">ጾመ ሐዋርያት ይጀምራል</p>
+                <p class="ann-body">የሐዋርያት ጾም ዝግጅት ስብሰባ ይካሄዳል። ሁሉም አባላት ይጋበዛሉ።</p>
+              </div>
+
+              <!-- ✏️ ማስታወቂያ 3 — ይቀይሩ -->
+              <div class="ann-item">
+                <span class="ann-badge badge-daily">ዕለታዊ</span>
+                <p class="ann-date">ቀን ቀን</p>
+                <p class="ann-title">የቅዳሴ ሰዓት — ጠዋት ፭ ሰዓት</p>
+                <p class="ann-body">ቅዳሴ በየሰንበቱ ይካሄዳል። ሁሉም እንኳን ደህና መጡ።</p>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+   </section>
 
     <!-- ===== ABOUT ===== -->
     <section class="about" id="about">

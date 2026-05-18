@@ -357,6 +357,98 @@ img {
   flex-wrap: wrap;
 }
 
+/* ===== SOCIAL + ANNOUNCEMENT SECTION ===== */
+.social-announce {
+  background: #0f0f1a;
+  padding: 50px 0;
+}
+.sa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+@media (max-width: 680px) {
+  .sa-grid { grid-template-columns: 1fr; }
+}
+.sa-card {
+  background: #1a1a2e;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 14px;
+  padding: 24px;
+}
+.sa-card-title {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+.s-btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.s-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  font-family: inherit;
+}
+.s-btn:hover { opacity: 0.85; }
+.s-btn.wa   { background: #25D366; }
+.s-btn.vi   { background: #7360F2; }
+.s-btn.tg   { background: #229ED9; }
+.s-btn.live { background: #E53935; }
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  animation: blink 1.2s infinite;
+  flex-shrink: 0;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.ann-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ann-item {
+  background: #12122a;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  padding: 10px 14px;
+}
+.ann-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-bottom: 5px;
+}
+.badge-new   { background: #1a3a5c; color: #7ab8f5; }
+.badge-feast { background: #3a2800; color: #f5c842; }
+.badge-daily { background: #0f3020; color: #5fd49a; }
+.ann-date  { font-size: 11px; color: #666; margin-bottom: 3px; }
+.ann-title { font-size: 13px; font-weight: 700; color: #eee; margin-bottom: 3px; }
+.ann-body  { font-size: 12px; color: #aaa; line-height: 1.5; }
+
+
 /* ===== ABOUT ===== */
 .about {
   padding: 80px 0;
