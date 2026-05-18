@@ -125,7 +125,7 @@ const translations = {
     'txt-tag':        'House of Faith',
     'txt-welcome':    'Welcome to',
     'txt-title':      'Deber Genete St, Mary Orthodox Tewahedo church',
-    'text-desc':      'A gathering place of faith, worship, and fellowship. All are welcome - come as you are.',
+    'text-desc':      'Welcome to the House of God, a place of faith, worship, and fellowship.',
     'txt-btn1':       'Our Services',
     'txt-btn2':       'Plan a Visit',
     // NAVBAR
@@ -284,7 +284,7 @@ const translations = {
     'txt-tag':        'የእምነት ቤት',
     'txt-welcome':     'እንኳን ደህና መጡ',
     'txt-title':      'ደብረ ገነት ቅድስት ማርያም ኦርቶዶክስ ተዋህዶ ቤተክርስቲያን',
-    'text-desc':      'የእምነት፣ አምልኮ፣ እና ኅብረት ቦታ። ሁሉም ይቀበላሉ — እንደ ሆናችሁ ኑ።',
+    'text-desc':      'ወደ እግዚአብሔር ቤት እንኳን በደህና መጡ፣  የእምነት፣ የአምልኮ እና የኅብረት ቦታ።',
     'txt-btn1':       'አገልግሎቶቻችን',
     'txt-btn2':       'ሊጠይቁን',
     // NAVBAR
